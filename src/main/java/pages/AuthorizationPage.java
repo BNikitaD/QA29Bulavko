@@ -1,0 +1,63 @@
+package pages;
+
+import lombok.extern.log4j.Log4j2;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+@Log4j2
+public class AuthorizationPage extends BasePage {
+
+    public static final By TELL_INPUT = By.id("tel");
+    public static final By GET_CODE = By.xpath("//*[@type='submit' and contains(.//span, 'Получить код')]");
+    public static final By LOGIN_WITH_PASSWORD_BUTTON = By.xpath("//*[@type='button' and contains(.//span, 'Войти по паролю')]");
+    public static final By PASSWORD_INPUT = By.id("current-password");
+    public static final By ENTER_BUTTON = By.xpath("//*[@type='submit' and contains(.//span, 'Войти')]");
+    public static final By VIEW_PASSWORD_BUTTON = By.xpath("//div[contains(@class, 'input_right_icons_wrapper__KGLhM') and contains(@class, 'password_eye_icon__06Xz_')]");
+    public static final By MESSAGE_INVALID_PHONE_NUMBER = By.xpath("//*[text()='Значение поля \"Номер телефона\" должно начинаться с +375 затем код (25|29|33|44) и далее 7 цифр (первая из которых не 0)']");
+    public static final By MESSAGE_NON_LOGINED_PHONE_NUMBER = By.xpath("//*[text()='Пожалуйста, убедитесь, что правильно ввели телефон']");
+    public static final By MESSAGE_EMPTY_PHONE_NUMBER= By.xpath("//*[text()='Поле \"Номер телефона\" обязательно для заполнения.']");
+    public static final By MESSAGE_EMPTY_PASSWORD_INPUT= By.xpath("//*[text()='Поле \"Пароль\" обязательно для заполнения.']");
+    public static final By MESSAGE_EMPTY_PASSWORD_AND_PHONE_NUMBER_INPUTS= By.xpath("//*[contains(text(), 'Номер телефона') and contains(text(), 'Пароль')]");
+    public static final By NAME_OF_PROFILE = By.xpath("//*[contains(@class, 'actions_action__maxWidth__ekofB') and contains(@class, 'actions_action__text__x4EUd')]");
+
+    public AuthorizationPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void inValidPhoneNumber() {
+        driver.findElement(TELL_INPUT).sendKeys("2341223");
+        driver.findElement(GET_CODE).click();
+        driver.findElement(MESSAGE_INVALID_PHONE_NUMBER);
+    }
+
+    public void nonLoginedPhoneNumber() {
+        driver.findElement(TELL_INPUT).sendKeys("291561848");
+        driver.findElement(GET_CODE).click();
+        driver.findElement(MESSAGE_NON_LOGINED_PHONE_NUMBER);
+    }
+
+    public void emptyPhoneNumberInput() {
+        driver.findElement(GET_CODE).click();
+        driver.findElement(MESSAGE_EMPTY_PHONE_NUMBER);
+    }
+
+    public void enterInPasswordWithEmptyFields() {
+        driver.findElement(LOGIN_WITH_PASSWORD_BUTTON).click();
+        driver.findElement(ENTER_BUTTON).click();
+    }
+
+    public void enterWithValidDataInPasswordOption() {
+        driver.findElement(LOGIN_WITH_PASSWORD_BUTTON).click();
+        driver.findElement(PASSWORD_INPUT).sendKeys("12345678Emall!");
+        driver.findElement(TELL_INPUT).sendKeys("291561848");
+        driver.findElement(VIEW_PASSWORD_BUTTON).click();
+        driver.findElement(ENTER_BUTTON).click();
+        driver.findElement(NAME_OF_PROFILE).getText();
+    }
+
+    public void enterWithEmptyPasswordInPasswordOption() {
+        driver.findElement(LOGIN_WITH_PASSWORD_BUTTON).click();
+        driver.findElement(TELL_INPUT).sendKeys("291561848");
+        driver.findElement(ENTER_BUTTON).click();
+        driver.findElement(MESSAGE_EMPTY_PASSWORD_INPUT).getText();
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Emall Test Suite" parallel="tests" thread-count="1">
+    <suite-files>
+        <suite-file path="EmallAuthorizationTest.xml"/>
+        <suite-file path="EmallLoginTests.xml"/>
+        <suite-file path="EmallMainTests.xml"/>
+    </suite-files>
+</suite>
