@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static constants.IConstants.LOGIN_PAGE_URL;
-
 public class MainPage extends BasePage{
 
     public static final By MAIN_BUTTON = By.xpath("//*[@src='https://api-preprod.emall.by/storage/admin/images/2Ndf4o1cG2umQSgVOpE1wAKtgvtiAhCdjNre291A.svg']");

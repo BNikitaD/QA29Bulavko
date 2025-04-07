@@ -1,7 +1,6 @@
 package tests;
 
 import Steps.*;
-import constants.IConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +10,7 @@ import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest implements IConstants, ITestConstants {
+public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     MainPage mainPage;

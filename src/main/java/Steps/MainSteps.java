@@ -3,7 +3,6 @@ package Steps;
 import Waiters.Waiter;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
-import pages.LoginPage;
 import pages.MainPage;
 
 import static Waiters.Waiter.ACCEPT_COOKIE;

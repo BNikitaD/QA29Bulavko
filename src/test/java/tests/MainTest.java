@@ -3,6 +3,8 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static constants.IConstants.MAIN_PAGE_URL;
+
 public class MainTest extends BaseTest {
 
     @Test()

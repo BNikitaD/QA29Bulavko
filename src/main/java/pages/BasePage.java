@@ -1,3 +1,5 @@
+package pages;
+
 import constants.IConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
