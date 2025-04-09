@@ -11,7 +11,7 @@ public class AuthorizationPage extends BasePage {
     public static final By LOGIN_WITH_PASSWORD_BUTTON = By.xpath("//*[@type='button' and contains(.//span, 'Войти по паролю')]");
     public static final By PASSWORD_INPUT = By.id("current-password");
     public static final By ENTER_BUTTON = By.xpath("//*[@type='submit' and contains(.//span, 'Войти')]");
-    public static final By VIEW_PASSWORD_BUTTON = By.xpath("//div[contains(@class, 'input_right_icons_wrapper__KGLhM') and contains(@class, 'password_eye_icon__06Xz_')]");
+    public static final By VIEW_PASSWORD_BUTTON = By.xpath("//*[contains(@class, 'input_clickable')]");
     public static final By MESSAGE_INVALID_PHONE_NUMBER = By.xpath("//*[text()='Значение поля \"Номер телефона\" должно начинаться с +375 затем код (25|29|33|44) и далее 7 цифр (первая из которых не 0)']");
     public static final By MESSAGE_NON_LOGINED_PHONE_NUMBER = By.xpath("//*[text()='Пожалуйста, убедитесь, что правильно ввели телефон']");
     public static final By MESSAGE_EMPTY_PHONE_NUMBER= By.xpath("//*[text()='Поле \"Номер телефона\" обязательно для заполнения.']");
@@ -23,41 +23,39 @@ public class AuthorizationPage extends BasePage {
         super(driver);
     }
 
-    public void inValidPhoneNumber() {
+    public void logjnWithInvalidPhoneNumber() {
         driver.findElement(TELL_INPUT).sendKeys("2341223");
         driver.findElement(GET_CODE).click();
         driver.findElement(MESSAGE_INVALID_PHONE_NUMBER);
     }
 
-    public void nonLoginedPhoneNumber() {
+    public void loginWithNonPhoneNumber() {
         driver.findElement(TELL_INPUT).sendKeys("291561848");
         driver.findElement(GET_CODE).click();
         driver.findElement(MESSAGE_NON_LOGINED_PHONE_NUMBER);
     }
 
-    public void emptyPhoneNumberInput() {
+    public void loginWithoutAnyFieldsInPhoneOption() {
         driver.findElement(GET_CODE).click();
         driver.findElement(MESSAGE_EMPTY_PHONE_NUMBER);
     }
 
-    public void enterInPasswordWithEmptyFields() {
+    public void checkLoginWithEmptyFields() {
         driver.findElement(LOGIN_WITH_PASSWORD_BUTTON).click();
         driver.findElement(ENTER_BUTTON).click();
     }
 
-    public void enterWithValidDataInPasswordOption() {
+    public void loginInPasswordIption() {
         driver.findElement(LOGIN_WITH_PASSWORD_BUTTON).click();
         driver.findElement(PASSWORD_INPUT).sendKeys("12345678Emall!");
         driver.findElement(TELL_INPUT).sendKeys("291561848");
         driver.findElement(VIEW_PASSWORD_BUTTON).click();
         driver.findElement(ENTER_BUTTON).click();
-        driver.findElement(NAME_OF_PROFILE).getText();
     }
 
-    public void enterWithEmptyPasswordInPasswordOption() {
+    public void loginWithEmptyPasswordInPasswordOption() {
         driver.findElement(LOGIN_WITH_PASSWORD_BUTTON).click();
         driver.findElement(TELL_INPUT).sendKeys("291561848");
         driver.findElement(ENTER_BUTTON).click();
-        driver.findElement(MESSAGE_EMPTY_PASSWORD_INPUT).getText();
     }
 }

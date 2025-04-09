@@ -27,6 +27,6 @@ public class MainTest extends BaseTest {
 
     @Test(description = "this test check search input")
     public void searchProductInSearchInput() {
-        mainSteps.searchProductInSearchInput();
+        mainSteps.searchProductThroughInputSearchField();
     }
 }

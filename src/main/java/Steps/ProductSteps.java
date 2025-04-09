@@ -34,13 +34,13 @@ public class ProductSteps {
 
     @Step
     public ProductSteps promocodeModalButton() {
-        waiter.promocode(driver, PROMOCODE, 7);
+        waiter.waitPromocodeModalButtonAppeared(driver, PROMOCODE, 7);
         return this;
     }
 
     @Step
     public ProductSteps addProductFromWidget() {
-        productPage.addProductfromWidget();
+        productPage.addProductFromWidget();
         return this;
     }
 }

@@ -6,7 +6,7 @@ public class ProductTest extends BaseTest{
 
     @Test(description = "this add main and product from widget in cart")
     public void addMainProductAndFromWidget() {
-        mainSteps.searchProductInSearchInput();
+        mainSteps.searchProductThroughInputSearchField();
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
     }

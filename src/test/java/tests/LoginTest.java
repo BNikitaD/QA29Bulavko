@@ -8,7 +8,7 @@ public class LoginTest extends LoginPrecondition {
     @Test(description = "this test with valid data")
     public void loginWithValidData() {
         mainSteps.registrationPage();
-        loginSteps.validRegistration(VALIDUSER);
+        loginSteps.successfulRegistration(VALIDUSER);
         Assert.assertEquals("https://emall.by/login/confirm-code?newAccount=true", "https://emall.by/login/confirm-code?newAccount=true");
     }
 

@@ -2,10 +2,6 @@ package pages;
 
 import constants.IConstants;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class MainPage extends BasePage{
 
@@ -30,11 +26,11 @@ public class MainPage extends BasePage{
 
     }
 
-    public void loginButton() {
+    public void clickLoginButton() {
         driver.findElement(ENTER_BUTTON).click();
     }
 
-    public void headerButtons() {
+    public void clickOnAllHeaders() {
         driver.findElement(ACTIONS).click();
         driver.get(IConstants.ACTIONS);
         driver.findElement(MAIN_BUTTON).click();
@@ -62,7 +58,7 @@ public class MainPage extends BasePage{
 
     }
 
-    public void mainButtonsForUsers() {
+    public void clickOnMainButtonsForUsers() {
         driver.findElement(ENTER_BUTTON).click();
         driver.get(LOGIN_PAGE_URL);
         driver.findElement(MAIN_BUTTON).click();
@@ -77,11 +73,10 @@ public class MainPage extends BasePage{
         driver.findElement(MAIN_BUTTON).click();
     }
 
-    public void searchProductInSearchInput() {
+    public void searchProductThroughInputSearchField() {
         driver.findElement(SEARCH_INPUT).sendKeys("кофе");
         driver.findElement(SEARCH_INPUT).sendKeys(Keys.RETURN);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement targetElement = wait.until(ExpectedConditions.visibilityOfElementLocated(RESULT_ELEMENT));
+        WebElement targetElement = waiter.productVisibility(driver, RESULT_ELEMENT, 7);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
         targetElement.click();
     }

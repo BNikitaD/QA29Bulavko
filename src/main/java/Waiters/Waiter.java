@@ -16,30 +16,41 @@ public class Waiter {
     public static final By PROMOCODE = By.xpath("//*[@type='button'][.//span[text()='Отлично!']]");
     public static final By PAYMENT_METHOD = By.xpath("//*[normalize-space(text())='Новой картой онлайн']");
 
-    public void acceptCookie(WebDriver driver, By locator, long seconds) {
+    public WebElement waitForElement(WebDriver driver, By locator, long seconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
-    }
-    public void agreement(WebDriver driver, By locator, long seconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public void promocode(WebDriver driver, By locator, long seconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
+    public void waitAndClick(WebDriver driver, By locator, long seconds) {
+        waitForElement(driver, locator, seconds).click();
+    }
+
+    public void acceptCookie(WebDriver driver, By locator, long seconds) {
+        waitAndClick(driver, locator, seconds);
+    }
+
+    public void agreement(WebDriver driver, By locator, long seconds) {
+        waitForElement(driver, locator, seconds);
+    }
+
+    public void waitPromocodeModalButtonAppeared(WebDriver driver, By locator, long seconds) {
+        waitAndClick(driver, locator, seconds);
     }
 
     public void addAddressButtonInCartPage(WebDriver driver, By locator, long seconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
+        waitAndClick(driver, locator, seconds);
     }
+
+    public void selectPaymentMethodInModal(WebDriver driver, By locator, long seconds) {
+        waitAndClick(driver, locator, seconds);
+    }
+
+    public WebElement productVisibility(WebDriver driver, By locator, int seconds) {
+        return waitForElement(driver, locator, seconds);
+    }
+
     public void excellentButton(WebDriver driver) {
         WebElement element = driver.findElement(By.xpath("//*[ @type='button'][.//span[text()='Отлично!']]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-    }
-    public void selectPaymentMethodInModal(WebDriver driver, By locator, long seconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
     }
 }

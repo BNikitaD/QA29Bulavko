@@ -24,30 +24,30 @@ public class LoginSteps {
 
     @Step
     public LoginSteps registrationFieldsandSubmitButton(User user) {
-        loginPage.registrationButton();
-        loginPage.login(user);
-        loginPage.submitButton();
+        loginPage.clickRegistrationButton();
+        loginPage.fillLoginForm(user);
+        loginPage.clickSubmitButton();
         return this;
     }
 
     @Step
     public LoginSteps noValidRegistration(User user) {
-        loginPage.registrationButton();
-        loginPage.login(user);
+        loginPage.clickRegistrationButton();
+        loginPage.fillLoginForm(user);
         loginPage.checkBox();
-        loginPage.scrollDownButton();
+        loginPage.clickScrollDownButton();
         return this;
     }
     @Step
-    public LoginSteps validRegistration(User user) {
-        loginPage.registrationButton();
-        loginPage.login(user);
+    public LoginSteps successfulRegistration(User user) {
+        loginPage.clickRegistrationButton();
+        loginPage.fillLoginForm(user);
         loginPage.checkBox();
         waiter.agreement(driver, AGREEMENT, 10);
-        loginPage.scrollDownButton();
-        loginPage.mainCheckBoxInModal();
-        loginPage.agreeButtonInModalWindow();
-        loginPage.submitButton();
+        loginPage.clickScrollDownButton();
+        loginPage.clickMainCheckBoxInModal();
+        loginPage.clickAgreeButtonInModalWindow();
+        loginPage.clickSubmitButton();
         return this;
     }
 }

@@ -2,7 +2,6 @@ package Steps;
 
 import Waiters.Waiter;
 import io.qameta.allure.Step;
-import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import pages.AuthorizationPage;
 import pages.CartPage;
@@ -29,13 +28,11 @@ public class CartSteps {
         this.driver = driver;
     }
 
-    @SneakyThrows
     public CartSteps chooseAddressFromPickUpOption() {
         waiter.addAddressButtonInCartPage(driver, ADD_ADDRESS_MAIN_BUTTON, 7);
         waiter.addAddressButtonInCartPage(driver, CHOOSE_ADDRESS_BUTTON_IN_MODAL_WINDOW, 7);
         waiter.addAddressButtonInCartPage(driver, ADD_ADDRESS_FROM_MAP, 7);
         waiter.addAddressButtonInCartPage(driver, ADD_ORDER_PICK_UP_POINT_OPTION, 7);
-        Thread.sleep(1500);
         waiter.addAddressButtonInCartPage(driver, READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS, 8);
         return this;
     }
@@ -53,8 +50,8 @@ public class CartSteps {
     }
 
     @Step
-    public CartSteps checkoutButton() {
-        cartPage.checkoutButton();
+    public CartSteps clickCheckout() {
+        cartPage.clickCheckout();
         return this;
     }
 
@@ -65,8 +62,8 @@ public class CartSteps {
     }
 
     @Step
-    public CartSteps choosePaymentMethodButton() {
-        cartPage.choosePaymentMethodButton();
+    public CartSteps paymentMethod() {
+        cartPage.paymentMethod();
         return this;
     }
 

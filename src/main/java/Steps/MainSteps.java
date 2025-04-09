@@ -23,7 +23,7 @@ public class MainSteps {
     public MainSteps registrationPage() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
-        mainPage.loginButton();
+        mainPage.clickLoginButton();
         return this;
     }
 
@@ -31,7 +31,7 @@ public class MainSteps {
     public MainSteps headerButtons() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
-        mainPage.headerButtons();
+        mainPage.clickOnAllHeaders();
         return this;
     }
 
@@ -39,13 +39,13 @@ public class MainSteps {
     public MainSteps mainButtonsForUsers() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
-        mainPage.mainButtonsForUsers();
+        mainPage.clickOnMainButtonsForUsers();
         return this;
     }
 
     @Step
-    public MainSteps searchProductInSearchInput() {
-        mainPage.searchProductInSearchInput();
+    public MainSteps searchProductThroughInputSearchField() {
+        mainPage.searchProductThroughInputSearchField();
         return this;
     }
 

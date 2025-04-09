@@ -24,37 +24,37 @@ public class AuthorizationSteps {
 
     @Step
     public AuthorizationSteps authorizationWithInvalidPhoneNumber() {
-        authorizationPage.inValidPhoneNumber();
+        authorizationPage.logjnWithInvalidPhoneNumber();
         return this;
     }
 
     @Step
     public AuthorizationSteps authorizationWithNonPhoneNumber() {
-        authorizationPage.nonLoginedPhoneNumber();
+        authorizationPage.loginWithNonPhoneNumber();
         return this;
     }
 
     @Step
     public AuthorizationSteps authorizationWithoutAnyFieldsInPhoneOption() {
-        authorizationPage.emptyPhoneNumberInput();
+        authorizationPage.loginWithoutAnyFieldsInPhoneOption();
         return this;
     }
 
     @Step
     public AuthorizationSteps enterInPasswordWithEmptyFields() {
-        authorizationPage.enterInPasswordWithEmptyFields();
+        authorizationPage.checkLoginWithEmptyFields();
         return this;
     }
 
     @Step
     public AuthorizationSteps enterWithValidDataInPasswordOption() {
-        authorizationPage.enterWithValidDataInPasswordOption();
+        authorizationPage.loginInPasswordIption();
         return this;
     }
 
     @Step
     public AuthorizationSteps enterWithEmptyPasswordInPasswordOption() {
-        authorizationPage.enterWithEmptyPasswordInPasswordOption();
+        authorizationPage.loginWithEmptyPasswordInPasswordOption();
         return this;
     }
 }

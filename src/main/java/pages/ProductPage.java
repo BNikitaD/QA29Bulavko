@@ -16,7 +16,7 @@ public class ProductPage extends BasePage {
         driver.findElement(ADD_MAIN_PRODUCT).click();
     }
 
-    public void addProductfromWidget() {
+    public void addProductFromWidget() {
         driver.findElement(ADD_PRODUCT_FROM_WIDGET).click();
     }
 }

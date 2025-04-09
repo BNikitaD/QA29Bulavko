@@ -10,7 +10,7 @@ public class CartTest extends BaseTest {
         mainSteps.registrationPage();
         authorizationSteps.enterWithValidDataInPasswordOption();
         productSteps.promocodeModalButton();
-        mainSteps.searchProductInSearchInput();
+        mainSteps.searchProductThroughInputSearchField();
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
         mainSteps.clickOnCartPage();
@@ -18,9 +18,9 @@ public class CartTest extends BaseTest {
         cartSteps.chooseAddressFromPickUpOption();
         cartSteps.addProductFromCartInPlus();
         cartSteps.uncheckCheckbox();
-        cartSteps.choosePaymentMethodButton();
+        cartSteps.paymentMethod();
         cartSteps.selectPaymentMethodInModal();
-        cartSteps.checkoutButton();
+        cartSteps.clickCheckout();
         Assert.assertEquals("https://pay196.paysec.by/pay/pay.cfm?CFSID=NyddOzEhKFc2Wk1TX1c6RCVYPlciVj0wMCI4IS5ITVAgCg%3D%3D&stage=iframe", "https://pay196.paysec.by/pay/pay.cfm?CFSID=NyddOzEhKFc2Wk1TX1c6RCVYPlciVj0wMCI4IS5ITVAgCg%3D%3D&stage=iframe");
     }
 }
