@@ -36,7 +36,7 @@ public class MainSteps {
     }
 
     @Step
-    public MainSteps mainButtonsForUsers() {
+    public MainSteps clicklMainButtonsForUsers() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
         mainPage.clickOnMainButtonsForUsers();

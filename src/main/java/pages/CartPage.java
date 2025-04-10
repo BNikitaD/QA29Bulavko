@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utils.Checkbox;
 
 public class CartPage extends BasePage {
@@ -26,12 +27,19 @@ public class CartPage extends BasePage {
         driver.findElement(ADD_FIRST_PRODUCT_IN_CART_IN_PLUS).click();
     }
 
-    //public void uncheckCheckbox() {
-        //WebElement checkbox = driver.findElement(REMOVE_CHECKBOX_FOR_SECOND_PRODUCT);
-        //if (!checkbox.isSelected()) {
-            //checkbox.click();
-        //}
-    //}
+    public void addProductInPlus(String productName, int addQuantity) {
+        WebElement addProduct = driver.findElement(By.xpath("//*[@aria-label='Добавить' and contains(@class, 'counter_counter__button_plus__bsTiE') and contains(text(), '" + productName + "')]"));
+        for (int i = 0; i < addQuantity; i++) {
+            addProduct.click();
+        }
+    }
+
+    public void removeProductInMinus(String productName, int removeQuantity) {
+        WebElement removeProduct = driver.findElement(By.xpath("//*[@aria-label='Отнять' and contains(@class, 'counter_counter__button_minus__BJhzD') and contains(text(), '" + productName + "')]"));
+        for (int i = 0; i < removeQuantity; i++) {
+            removeProduct.click();
+        }
+    }
 
     public void uncheckCheckbox() {
         Checkbox removeCheckbox = new Checkbox(driver, "removeSecondProduct");

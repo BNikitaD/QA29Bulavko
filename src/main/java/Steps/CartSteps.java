@@ -39,7 +39,7 @@ public class CartSteps {
 
     @Step
     public CartSteps addProductFromCartInPlus() {
-        cartPage.addProductFromCartInPlus();
+        cartPage.addProductInPlus("Кофе молотый «Egoiste» Noir, натуральный, 100 г", 2);
         return this;
     }
 

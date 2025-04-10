@@ -21,6 +21,8 @@ public class CartTest extends BaseTest {
         cartSteps.paymentMethod();
         cartSteps.selectPaymentMethodInModal();
         cartSteps.clickCheckout();
-        Assert.assertEquals("https://pay196.paysec.by/pay/pay.cfm?CFSID=NyddOzEhKFc2Wk1TX1c6RCVYPlciVj0wMCI4IS5ITVAgCg%3D%3D&stage=iframe", "https://pay196.paysec.by/pay/pay.cfm?CFSID=NyddOzEhKFc2Wk1TX1c6RCVYPlciVj0wMCI4IS5ITVAgCg%3D%3D&stage=iframe");
+        String expectedUrl = "https://pay196.paysec.by/pay/pay.cfm?CFSID=NyddOzEhKFc2Wk1TX1c6RCVYPlciVj0wMCI4IS5ITVAgCg%3D%3D&stage=iframe";
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals(actualUrl, expectedUrl);
     }
 }

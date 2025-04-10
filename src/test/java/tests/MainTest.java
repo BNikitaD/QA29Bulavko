@@ -21,7 +21,7 @@ public class MainTest extends BaseTest {
 
     @Test(description = "this test check that all buttons in icons are working")
     public void checkClicabilityOfMainButtonsForUsers() {
-        mainSteps.mainButtonsForUsers();
+        mainSteps.clicklMainButtonsForUsers();
         Assert.assertEquals(MAIN_PAGE_URL,MAIN_PAGE_URL);
     }
 

@@ -24,13 +24,13 @@ public class AuthorizationSteps {
 
     @Step
     public AuthorizationSteps authorizationWithInvalidPhoneNumber() {
-        authorizationPage.logjnWithInvalidPhoneNumber();
+        authorizationPage.logjnWithInvalidPhoneNumber("2341223");
         return this;
     }
 
     @Step
     public AuthorizationSteps authorizationWithNonPhoneNumber() {
-        authorizationPage.loginWithNonPhoneNumber();
+        authorizationPage.loginWithNonPhoneNumber("291561848");
         return this;
     }
 
@@ -48,13 +48,13 @@ public class AuthorizationSteps {
 
     @Step
     public AuthorizationSteps enterWithValidDataInPasswordOption() {
-        authorizationPage.loginInPasswordIption();
+        authorizationPage.loginInPasswordOption("12345678Emall!","291561848" );
         return this;
     }
 
     @Step
     public AuthorizationSteps enterWithEmptyPasswordInPasswordOption() {
-        authorizationPage.loginWithEmptyPasswordInPasswordOption();
+        authorizationPage.loginWithEmptyPasswordInPasswordOption("291561848");
         return this;
     }
 }
