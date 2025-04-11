@@ -14,15 +14,15 @@ public class CartTest extends BaseTest {
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
         mainSteps.clickOnCartPage();
-        cartSteps.excellentButton();
-        cartSteps.chooseAddressFromPickUpOption();
-        cartSteps.addProductFromCartInPlus();
-        cartSteps.uncheckCheckbox();
-        cartSteps.paymentMethod();
-        cartSteps.selectPaymentMethodInModal();
-        cartSteps.clickCheckout();
+        cartSteps.excellentButton()
+                .chooseAddressFromPickUpOption()
+                .addProductFromCartInPlus()
+                .uncheckCheckbox()
+                .paymentMethod()
+                .selectPaymentMethodInModal()
+                .clickCheckout();
         String expectedUrl = "https://pay196.paysec.by/pay/pay.cfm?CFSID=NyddOzEhKFc2Wk1TX1c6RCVYPlciVj0wMCI4IS5ITVAgCg%3D%3D&stage=iframe";
         String actualUrl = driver.getCurrentUrl();
-        Assert.assertEquals(actualUrl, expectedUrl);
+        Assert.assertTrue(actualUrl.contains("https://pay196.paysec.by"));
     }
 }

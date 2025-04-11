@@ -4,7 +4,7 @@ import entity.User;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.Checkbox;
+import elements.Checkbox;
 
 @Log4j2
 public class LoginPage extends BasePage {
@@ -98,7 +98,7 @@ public class LoginPage extends BasePage {
         return driver.findElement(ERROR_MESSAGE_PASSWORDS).getText();
     }
 
-    public String getErrorMessageTextREPEATPASSWORD() {
+    public String getErrorMessageTextRepeatPassword() {
         return driver.findElement(ERROR_MESSAGERE_PEATPASSWORD).getText();
     }
 }

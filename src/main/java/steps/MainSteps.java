@@ -1,4 +1,4 @@
-package Steps;
+package steps;
 
 import Waiters.Waiter;
 import io.qameta.allure.Step;

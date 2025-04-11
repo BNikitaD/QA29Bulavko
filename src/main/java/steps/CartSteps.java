@@ -1,4 +1,4 @@
-package Steps;
+package steps;
 
 import Waiters.Waiter;
 import io.qameta.allure.Step;
@@ -39,7 +39,7 @@ public class CartSteps {
 
     @Step
     public CartSteps addProductFromCartInPlus() {
-        cartPage.addProductInPlus("Кофе молотый «Egoiste» Noir, натуральный, 100 г", 2);
+        cartPage.addProductInPlus("Кофе молотый «Egoiste» Noir, натуральный, 100 г", 3);
         return this;
     }
 

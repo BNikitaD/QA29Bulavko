@@ -23,7 +23,7 @@ public class LoginTest extends LoginPrecondition {
     public void loginWithEmptyRepeatPasswordAndCheckBox() {
         mainSteps.registrationPage();
         loginSteps.registrationFieldsandSubmitButton(USER_WITH_EMPTY_REPEAT_PASSWORD);
-        softAssert.assertEquals(loginPage.getErrorMessageTextREPEATPASSWORD(), EMPTYREPEATPASSWORD);
+        softAssert.assertEquals(loginPage.getErrorMessageTextRepeatPassword(), EMPTYREPEATPASSWORD);
         softAssert.assertEquals(loginPage.getErrorMessageTextCheckBox(), EMPTYCHECKBOX);
         softAssert.assertAll();
     }

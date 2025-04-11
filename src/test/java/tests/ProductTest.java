@@ -1,6 +1,9 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static pages.ProductPage.QUANTITY_IN_CART;
 
 public class ProductTest extends BaseTest{
 
@@ -9,5 +12,6 @@ public class ProductTest extends BaseTest{
         mainSteps.searchProductThroughInputSearchField();
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
+        Assert.assertEquals(productPage.checkQuantityProductInCart(), QUANTITY_IN_CART);
     }
 }
