@@ -55,7 +55,6 @@ public class MainPage extends BasePage{
         driver.findElement(CATEGORY4353_BICYCLES).click();
         driver.get(IConstants.CATEGORY4353_BICYCLES);
         driver.findElement(MAIN_BUTTON).click();
-
     }
 
     public void clickOnMainButtonsForUsers() {
@@ -76,7 +75,7 @@ public class MainPage extends BasePage{
     public void searchProductThroughInputSearchField() {
         driver.findElement(SEARCH_INPUT).sendKeys("кофе");
         driver.findElement(SEARCH_INPUT).sendKeys(Keys.RETURN);
-        WebElement targetElement = waiter.productVisibility(driver, RESULT_ELEMENT, 7);
+        WebElement targetElement = waiter.waitForElement(driver, RESULT_ELEMENT, 7);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
         targetElement.click();
     }

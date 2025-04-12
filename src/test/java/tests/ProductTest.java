@@ -12,6 +12,6 @@ public class ProductTest extends BaseTest{
         mainSteps.searchProductThroughInputSearchField();
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
-        Assert.assertEquals(productPage.checkQuantityProductInCart(), QUANTITY_IN_CART);
+        Assert.assertEquals(productSteps.checkQuantityProductInCart(), QUANTITY_IN_CART);
     }
 }

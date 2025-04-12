@@ -22,7 +22,7 @@ public class MainSteps {
     @Step
     public MainSteps registrationPage() {
         mainPage.openPage(MAIN_PAGE_URL);
-        waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
+        waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
         mainPage.clickLoginButton();
         return this;
     }
@@ -30,7 +30,7 @@ public class MainSteps {
     @Step
     public MainSteps headerButtons() {
         mainPage.openPage(MAIN_PAGE_URL);
-        waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
+        waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
         mainPage.clickOnAllHeaders();
         return this;
     }
@@ -38,7 +38,7 @@ public class MainSteps {
     @Step
     public MainSteps clicklMainButtonsForUsers() {
         mainPage.openPage(MAIN_PAGE_URL);
-        waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
+        waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
         mainPage.clickOnMainButtonsForUsers();
         return this;
     }
@@ -52,7 +52,7 @@ public class MainSteps {
     @Step
     public MainSteps openPageAndAcceptCookies() {
         mainPage.openPage(MAIN_PAGE_URL);
-        waiter.acceptCookie(driver, ACCEPT_COOKIE, 7);
+        waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
         return this;
     }
 

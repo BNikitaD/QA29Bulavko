@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class Checkbox {
 
     public String label;
-    public static final String CHECKBOX_LOCATOR = "(//span[contains(@class, 'checkbox_checkbox__pseudo__Km_pz') and contains(@class, 'checkbox_checkbox__pseudo_checked__CNCMz')])[3]";
+    public static final String CHECKBOX_LOCATOR = "//span[contains(text(), '%s')]/preceding-sibling::input[@type='checkbox']";
     WebDriver driver;
 
     public Checkbox(WebDriver driver, String label) {

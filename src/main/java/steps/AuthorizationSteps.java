@@ -1,36 +1,28 @@
 package steps;
 
-import Waiters.Waiter;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.AuthorizationPage;
-import pages.LoginPage;
-import pages.MainPage;
 
 public class AuthorizationSteps {
 
-    Waiter waiter = new Waiter();
-    private LoginPage loginPage;
-    private MainPage mainPage;
     private AuthorizationPage authorizationPage;
     WebDriver driver;
 
     public AuthorizationSteps(WebDriver driver) {
-        mainPage = new MainPage(driver);
-        loginPage = new LoginPage(driver);
         authorizationPage = new AuthorizationPage(driver);
         this.driver = driver;
     }
 
     @Step
-    public AuthorizationSteps authorizationWithInvalidPhoneNumber() {
-        authorizationPage.logjnWithInvalidPhoneNumber("2341223");
+    public AuthorizationSteps authorizationWithInvalidPhoneNumber(String tel) {
+        authorizationPage.logjnWithInvalidPhoneNumber(tel);
         return this;
     }
 
     @Step
-    public AuthorizationSteps authorizationWithNonPhoneNumber() {
-        authorizationPage.loginWithNonPhoneNumber("291561848");
+    public AuthorizationSteps authorizationWithNonPhoneNumber(String tel) {
+        authorizationPage.loginWithNonPhoneNumber(tel);
         return this;
     }
 
@@ -47,14 +39,44 @@ public class AuthorizationSteps {
     }
 
     @Step
-    public AuthorizationSteps enterWithValidDataInPasswordOption() {
-        authorizationPage.loginInPasswordOption("12345678Emall!","291561848" );
+    public AuthorizationSteps enterWithValidDataInPasswordOption(String password, String tel) {
+        authorizationPage.loginInPasswordOption(password, tel);
         return this;
     }
 
     @Step
-    public AuthorizationSteps enterWithEmptyPasswordInPasswordOption() {
-        authorizationPage.loginWithEmptyPasswordInPasswordOption("291561848");
+    public AuthorizationSteps enterWithEmptyPasswordInPasswordOption(String tel) {
+        authorizationPage.loginWithEmptyPasswordInPasswordOption(tel);
         return this;
+    }
+
+    @Step
+    public String getErrorMessageInvalidPhoneNumber() {
+        return authorizationPage.getErrorMessageInvalidPhoneNumber();
+    }
+
+    @Step
+    public String getErrorMessageNonLoginedPhoneNumber() {
+        return authorizationPage.getErrorMessageNonLoginedPhoneNumber();
+    }
+
+    @Step
+    public String getErrorMessageEmptyPhoneNumber() {
+        return authorizationPage.getErrorMessageEmptyPhoneNumber();
+    }
+
+    @Step
+    public String getErrorMessageEmptyPasswordAndPhoneNumberInputs() {
+        return authorizationPage.getErrorMessageEmptyPasswordAndPhoneNumberInputs();
+    }
+
+    @Step
+    public String getNameOfProfile() {
+        return authorizationPage.getNameOfProfile();
+    }
+
+    @Step
+    public String getErrorMessageEmptyPasswordInput() {
+        return authorizationPage.getErrorMessageEmptyPasswordInput();
     }
 }

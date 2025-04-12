@@ -4,17 +4,18 @@ import entity.User;
 import org.testng.asserts.SoftAssert;
 
 public class LoginPrecondition extends BaseTest {
-    public static final String EMPTYSURNAMEERROR = "Фамилия обязательна для заполнения";
-    public static final String EMPTYCHECKBOX = "Необходимо согласие";
-    public static final String EMPTYNAME = "Имя обязательно для заполнения";
-    public static final String EMPTYPATRONYMIC = "Отчество обязательно для заполнения";
-    public static final String EMPTYPHONE = "Номер телефона введён некорректно";
-    public static final String EMPTYEMAIL = "Email обязателен для заполнения";
-    public static final String EMPTYPASSWORDS = "Создание пароля обязательно";
-    public static final String EMPTYREPEATPASSWORD = "Пароли не совпадают";
+    public static final String EMPTY_SURNAME_ERROR = "Фамилия обязательна для заполнения";
+    public static final String EMPTY_CHECKBOX = "Необходимо согласие";
+    public static final String EMPTY_NAME = "Имя обязательно для заполнения";
+    public static final String EMPTY_PATRONYMIC = "Отчество обязательно для заполнения";
+    public static final String EMPTY_PHONE = "Номер телефона введён некорректно";
+    public static final String EMPTY_EMAIL = "Email обязателен для заполнения";
+    public static final String EMPTY_PASSWORDS = "Создание пароля обязательно";
+    public static final String EMPTY_REPEAT_PASSWORD = "Пароли не совпадают";
+    public static final String CREATE_ACCOUNT = "Создать аккаунт";
 
     public SoftAssert softAssert = new SoftAssert();
-    protected final User VALIDUSER = User.builder()
+    protected final User VALID_USER = User.builder()
             .name(PropertyReader.getProperty("name"))
             .surname(PropertyReader.getProperty("name"))
             .patronymic(PropertyReader.getProperty("patronymic"))
@@ -34,7 +35,7 @@ public class LoginPrecondition extends BaseTest {
             .repeatPassword("")
             .build();
 
-    protected final User USER_WITH_EMPTY_FIELDS= User.builder()
+    protected final User USER_WITH_EMPTY_FIELDS = User.builder()
             .name(PropertyReader.getProperty(""))
             .surname(PropertyReader.getProperty(""))
             .patronymic(PropertyReader.getProperty(""))

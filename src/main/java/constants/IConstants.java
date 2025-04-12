@@ -2,7 +2,6 @@ package constants;
 
 public interface IConstants {
     String BASE_URL = "https://emall.by";
-
     String LOGIN_PAGE_URL = BASE_URL + "/login?backurl=/";
     String MAIN_PAGE_URL = BASE_URL;
     String ACTIONS = BASE_URL + "/actions";

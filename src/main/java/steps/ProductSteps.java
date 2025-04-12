@@ -10,18 +10,10 @@ import static Waiters.Waiter.PROMOCODE;
 public class ProductSteps {
 
     Waiter waiter = new Waiter();
-    private LoginPage loginPage;
-    private MainPage mainPage;
-    private AuthorizationPage authorizationPage;
     WebDriver driver;
-    private CartPage cartPage;
     private ProductPage productPage;
 
     public ProductSteps(WebDriver driver) {
-        mainPage = new MainPage(driver);
-        loginPage = new LoginPage(driver);
-        authorizationPage = new AuthorizationPage(driver);
-        cartPage = new CartPage(driver);
         productPage = new ProductPage(driver);
         this.driver = driver;
     }
@@ -34,13 +26,19 @@ public class ProductSteps {
 
     @Step
     public ProductSteps promocodeModalButton() {
-        waiter.waitPromocodeModalButtonAppeared(driver, PROMOCODE, 7);
+        waiter.waitForElement(driver, PROMOCODE, 7).click();
         return this;
     }
 
     @Step
     public ProductSteps addProductFromWidget() {
         productPage.addProductFromWidget();
+        return this;
+    }
+
+    @Step
+    public ProductSteps checkQuantityProductInCart() {
+        productPage.checkQuantityProductInCart();
         return this;
     }
 }

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import elements.Checkbox;
@@ -13,9 +14,9 @@ public class CartPage extends BasePage {
     public static final By ADD_ORDER_PICK_UP_POINT_OPTION = By.xpath("//button[@type='submit' and .//span[text()='Выбрать']]");
     public static final By READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS = By.xpath("//*[@type='button' and .//span[text()='Готово']]");
     public static final String INCREASE_PRODUCT_COUNT_BY_NAME = "//*[@aria-label='Добавить' and contains(@class, 'counter_counter__button_plus__bsTiE') and contains(text(), '%s')]";
-    //public static final By REMOVE_CHECKBOX_FOR_SECOND_PRODUCT = By.xpath("(//span[contains(@class, 'checkbox_checkbox__pseudo__Km_pz') and contains(@class, 'checkbox_checkbox__pseudo_checked__CNCMz')])[3]");
     public static final By CHECKOUT_BUTTON = By.xpath("//*[@type='button'][.//span[text()='Оформить заказ']]");
     public static final By PAYMENT_METHOD_BUTTON = By.xpath("//*[contains(@class,'select-button_title')]");
+    public static final By EXCELLENT_BUTTON = By.xpath("//*[ @type='button'][.//span[text()='Отлично!']]");
 
 
     public CartPage(WebDriver driver) {
@@ -37,8 +38,7 @@ public class CartPage extends BasePage {
     }
 
     public void uncheckCheckbox() {
-        Checkbox removeCheckbox = new Checkbox(driver, "removeSecondProduct");
-        removeCheckbox.setCheckboxValue(false);
+        new Checkbox(driver, "removeSecondProduct").setCheckboxValue(false);
     }
 
 
@@ -46,7 +46,11 @@ public class CartPage extends BasePage {
         driver.findElement(CHECKOUT_BUTTON).click();
     }
 
-    public void paymentMethod() {
+    public void clickOnPaymentMethod() {
         driver.findElement(PAYMENT_METHOD_BUTTON).click();
+    }
+    public void clickOnExcellentButton() {
+        WebElement element = driver.findElement(EXCELLENT_BUTTON);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 }

@@ -17,19 +17,19 @@ public class LoginPage extends BasePage {
     public static final By EMAIL_INPUT = By.name("email");
     public static final By PASSWORD_INPUT = By.name("password");
     public static final By PASSWORDREPEAT_INPUT = By.name("passwordRepeat");
-    //public static final By CHECK_BOX = By.xpath("//*[@data-test-id='checkbox-personal-data']/following-sibling::span[contains(@class, 'checkbox_checkbox__pseudo')]");
     public static final By SUBMIT_BUTTON = By.xpath("//*[@type='submit']");
-    public static final By ERROR_MESSAGE_SURNAME = By.xpath("//*[contains(text(), 'Фамилия обязательна для заполнения')]");
-    public static final By ERROR_MESSAGE_CHECKBOX = By.xpath("//*[contains(text(), 'Необходимо согласие')]");
-    public static final By ERROR_MESSAGE_NAME = By.xpath("//*[contains(text(), 'Имя обязательно для заполнения')]");
-    public static final By ERROR_MESSAGE_PATRONYMIC = By.xpath("//*[contains(text(), 'Отчество обязательно для заполнения')]");
-    public static final By ERROR_MESSAGE_PHONE = By.xpath("//*[contains(text(), 'Номер телефона введён некорректно')]");
-    public static final By ERROR_MESSAGE_EMAIL = By.xpath("//*[contains(text(), 'Email обязателен для заполнения')]");
-    public static final By ERROR_MESSAGE_PASSWORDS = By.xpath("//*[contains(text(), 'Создание пароля обязательно')]");
-    public static final By ERROR_MESSAGERE_PEATPASSWORD = By.xpath("//*[contains(text(), 'Пароли не совпадают')]");
+    public static final By ERROR_MESSAGE_SURNAME = By.xpath("(//*[@class='input_message__DoTq9'])[2] ");
+    public static final By ERROR_MESSAGE_CHECKBOX = By.xpath("(//div[@class='registration_error__9Npgk'])[2] ");
+    public static final By ERROR_MESSAGE_NAME = By.xpath("(//*[@class='input_message__DoTq9'])[1] ");
+    public static final By ERROR_MESSAGE_PATRONYMIC = By.xpath("(//*[@class='input_message__DoTq9'])[3] ");
+    public static final By ERROR_MESSAGE_PHONE = By.xpath("//*[@class='new-input-phone_message__WsZQD']");
+    public static final By ERROR_MESSAGE_EMAIL = By.xpath("(//*[@class='input_message__DoTq9'])[4]");
+    public static final By ERROR_MESSAGE_PASSWORDS = By.xpath("(//div[@class='registration_error__9Npgk'])[1]");
+    public static final By ERROR_MESSAGERE_PEATPASSWORD = By.xpath("//*[contains(@class, 'registration_error')]");
     public static final By SCROLL_DOWN_BUTTON = By.xpath("//*[contains(@class, 'policy-consent_scroll_to_bottom_button__cJgUD')]");
     public static final By MAIN_CHECKBOX_IN_MODAL_WINDOW = By.xpath("//*[contains(text(), '* Создание и администрирование личного кабинета')]");
     public static final By AGREE_BUTTON = By.xpath("//*[contains(text(), 'Согласен')]");
+    public static final By CREATE_ACCOUNT_BUTTON = By.xpath("//*[contains(@class, 'btn_btn__jx6SQ') and contains(@class, 'confirm-code_enter_button__vMrHH')]");
 
 
 
@@ -100,5 +100,9 @@ public class LoginPage extends BasePage {
 
     public String getErrorMessageTextRepeatPassword() {
         return driver.findElement(ERROR_MESSAGERE_PEATPASSWORD).getText();
+    }
+
+    public String getCreateAccount() {
+        return driver.findElement(CREATE_ACCOUNT_BUTTON).getText();
     }
 }

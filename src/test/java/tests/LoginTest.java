@@ -8,23 +8,23 @@ public class LoginTest extends LoginPrecondition {
     @Test(description = "this test with valid data")
     public void loginWithValidData() {
         mainSteps.registrationPage();
-        loginSteps.successfulRegistration(VALIDUSER);
-        Assert.assertEquals("https://emall.by/login/confirm-code?newAccount=true", "https://emall.by/login/confirm-code?newAccount=true");
+        loginSteps.successfulRegistration(VALID_USER);
+        Assert.assertEquals(loginSteps.getCreateAccount(), CREATE_ACCOUNT);
     }
 
     @Test(description = "this test with empty checkbox")
     public void loginWithNotSelectedCheckBox() {
         mainSteps.registrationPage();
-        loginSteps.registrationFieldsandSubmitButton(VALIDUSER);
-        Assert.assertEquals(loginPage.getErrorMessageTextCheckBox(), EMPTYCHECKBOX);
+        loginSteps.registrationFieldsandSubmitButton(VALID_USER);
+        Assert.assertEquals(loginSteps.getErrorMessageTextCheckBox(), EMPTY_CHECKBOX);
     }
 
     @Test(description = "Empty repeat password field and checkbox")
     public void loginWithEmptyRepeatPasswordAndCheckBox() {
         mainSteps.registrationPage();
         loginSteps.registrationFieldsandSubmitButton(USER_WITH_EMPTY_REPEAT_PASSWORD);
-        softAssert.assertEquals(loginPage.getErrorMessageTextRepeatPassword(), EMPTYREPEATPASSWORD);
-        softAssert.assertEquals(loginPage.getErrorMessageTextCheckBox(), EMPTYCHECKBOX);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextRepeatPassword(), EMPTY_REPEAT_PASSWORD);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextCheckBox(), EMPTY_CHECKBOX);
         softAssert.assertAll();
     }
 
@@ -32,12 +32,12 @@ public class LoginTest extends LoginPrecondition {
     public void loginWithEmptyAllfields() {
         mainSteps.registrationPage();
         loginSteps.registrationFieldsandSubmitButton(USER_WITH_EMPTY_FIELDS);
-        softAssert.assertEquals(loginPage.getErrorMessageTextSurname(), EMPTYSURNAMEERROR);
-        softAssert.assertEquals(loginPage.getErrorMessageTextCheckBox(),EMPTYCHECKBOX);
-        softAssert.assertEquals(loginPage.getErrorMessageTextName(),EMPTYNAME);
-        softAssert.assertEquals(loginPage.getErrorMessageTextPatronymic(),EMPTYPATRONYMIC);
-        softAssert.assertEquals(loginPage.getErrorMessageTextPhone(),EMPTYPHONE);
-        softAssert.assertEquals(loginPage.getErrorMessageTextEmail(),EMPTYEMAIL);
-        softAssert.assertEquals(loginPage.getErrorMessageTextPasswords(),EMPTYPASSWORDS);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextSurname(), EMPTY_SURNAME_ERROR);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextCheckBox(),EMPTY_CHECKBOX);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextName(),EMPTY_NAME);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextPatronymic(),EMPTY_PATRONYMIC);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextPhone(),EMPTY_PHONE);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextEmail(),EMPTY_EMAIL);
+        softAssert.assertEquals(loginSteps.getErrorMessageTextPasswords(),EMPTY_PASSWORDS);
     }
 }
