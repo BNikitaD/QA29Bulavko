@@ -35,6 +35,12 @@ public class CartSteps {
     }
 
     @Step
+    public CartSteps removeProductInMinus(String productName, int removeQuantity) {
+        cartPage.removeProductInMinus(productName, removeQuantity);
+        return this;
+    }
+
+    @Step
     public CartSteps uncheckCheckbox() {
         cartPage.uncheckCheckbox();
         return this;

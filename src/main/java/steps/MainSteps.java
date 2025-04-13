@@ -28,18 +28,26 @@ public class MainSteps {
     }
 
     @Step
-    public MainSteps headerButtons() {
-        mainPage.openPage(MAIN_PAGE_URL);
-        waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
-        mainPage.clickOnAllHeaders();
+    public MainSteps clickEnterButton() {
+        mainPage.clickEnterButton();
         return this;
     }
 
     @Step
-    public MainSteps clicklMainButtonsForUsers() {
-        mainPage.openPage(MAIN_PAGE_URL);
-        waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
-        mainPage.clickOnMainButtonsForUsers();
+    public MainSteps clickMainButton() {
+        mainPage.clickMainButton();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickOrders() {
+        mainPage.clickOrders();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickFavorites() {
+        mainPage.clickFavorites();
         return this;
     }
 
@@ -59,6 +67,54 @@ public class MainSteps {
     @Step
     public MainSteps clickOnCartPage() {
         mainPage.clickOnCartPage();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickActions() {
+        mainPage.clickActions();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickPaymentInInstallments() {
+        mainPage.clickPaymentInInstallments();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickLuckyGoods() {
+        mainPage.clickLuckyGoods();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickUrgentGoods() {
+        mainPage.clickUrgentGoods();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickTakeMore() {
+        mainPage.clickTakeMore();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickCategoryDiapers() {
+        mainPage.clickCategoryDiapers();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickCategoryForCleaning() {
+        mainPage.clickCategoryForCleaning();
+        return this;
+    }
+
+    @Step
+    public MainSteps clickCategoryBicycles() {
+        mainPage.clickCategoryBicycles();
         return this;
     }
 }

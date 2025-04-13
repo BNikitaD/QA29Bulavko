@@ -30,46 +30,52 @@ public class MainPage extends BasePage{
         driver.findElement(ENTER_BUTTON).click();
     }
 
-    public void clickOnAllHeaders() {
+    public void clickActions() {
         driver.findElement(ACTIONS).click();
-        driver.get(IConstants.ACTIONS);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickPaymentInInstallments() {
         driver.findElement(PAYMENT_IN_INSTALLMENTS).click();
-        driver.get(IConstants.PAYMENT_IN_INSTALLMENTS);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickLuckyGoods() {
         driver.findElement(LUCKY_GOODS).click();
-        driver.get(IConstants.LUCKY_GOODS);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickUrgentGoods() {
         driver.findElement(URGENT_GOODS).click();
-        driver.get(IConstants.URGENT_GOODS);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickTakeMore() {
         driver.findElement(TAKE_MORE).click();
-        driver.get(IConstants.TAKE_MORE);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickCategoryDiapers() {
         driver.findElement(CATEGORY4649_DIAPERS).click();
-        driver.get(IConstants.CATEGORY4649_DIAPERS);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickCategoryForCleaning() {
         driver.findElement(CATEGORY3944_FOR_CLEANING).click();
-        driver.get(IConstants.CATEGORY3944_FOR_CLEANING);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickCategoryBicycles() {
         driver.findElement(CATEGORY4353_BICYCLES).click();
-        driver.get(IConstants.CATEGORY4353_BICYCLES);
+    }
+
+    public void clickEnterButton() {
+        driver.findElement(ENTER_BUTTON).click();
+    }
+
+    public void clickMainButton() {
         driver.findElement(MAIN_BUTTON).click();
     }
 
-    public void clickOnMainButtonsForUsers() {
-        driver.findElement(ENTER_BUTTON).click();
-        driver.get(LOGIN_PAGE_URL);
-        driver.findElement(MAIN_BUTTON).click();
+    public void clickOrders() {
         driver.findElement(ORDERS).click();
-        driver.get(IConstants.ORDERS);
-        driver.findElement(MAIN_BUTTON).click();
+    }
+
+    public void clickFavorites() {
         driver.findElement(FAVORITES).click();
-        driver.get(IConstants.FAVORITES);
-        driver.findElement(MAIN_BUTTON).click();
-        driver.findElement(CART).click();
-        driver.get(IConstants.CART);
-        driver.findElement(MAIN_BUTTON).click();
     }
 
     public void searchProductThroughInputSearchField() {
