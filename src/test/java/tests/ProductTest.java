@@ -9,9 +9,9 @@ public class ProductTest extends BaseTest{
 
     @Test(description = "this add main and product from widget in cart")
     public void addMainProductAndFromWidget() {
-        mainSteps.searchProductThroughInputSearchField();
+        mainSteps.searchProductThroughInputSearchField("кофе");
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
-        Assert.assertEquals(productSteps.checkQuantityProductInCart(), QUANTITY_IN_CART);
+        Assert.assertEquals(productSteps.getQuantityProductInCart(), QUANTITY_IN_CART);
     }
 }

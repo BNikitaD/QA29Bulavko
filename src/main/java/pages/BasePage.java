@@ -1,6 +1,6 @@
 package pages;
 
-import Waiters.Waiter;
+import waiters.Waiter;
 import constants.IConstants;
 import org.openqa.selenium.WebDriver;
 

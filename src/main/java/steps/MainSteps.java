@@ -1,11 +1,11 @@
 package steps;
 
-import Waiters.Waiter;
+import waiters.Waiter;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.MainPage;
 
-import static Waiters.Waiter.ACCEPT_COOKIE;
+import static waiters.Waiter.ACCEPT_COOKIE;
 import static constants.IConstants.MAIN_PAGE_URL;
 
 public class MainSteps {
@@ -23,7 +23,7 @@ public class MainSteps {
     public MainSteps registrationPage() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
-        mainPage.clickLoginButton();
+        mainPage.clickEnterButton();
         return this;
     }
 
@@ -52,8 +52,8 @@ public class MainSteps {
     }
 
     @Step
-    public MainSteps searchProductThroughInputSearchField() {
-        mainPage.searchProductThroughInputSearchField();
+    public MainSteps searchProductThroughInputSearchField(String productName) {
+        mainPage.searchProductThroughInputSearchField(productName);
         return this;
     }
 

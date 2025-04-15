@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class ProductPage extends BasePage {
 
     public static final By ADD_PRODUCT_FROM_WIDGET = By.xpath("//*[contains(@class, 'icon-cart-20')]");
@@ -16,12 +18,14 @@ public class ProductPage extends BasePage {
 
     public void addMainProduct() {
         driver.findElement(ADD_MAIN_PRODUCT).click();
+        log.info("Основной продукт добавлен в корзину");
     }
 
     public void addProductFromWidget() {
         driver.findElement(ADD_PRODUCT_FROM_WIDGET).click();
+        log.info("Продукт из виджета добавлен в корзину");
     }
-    public String checkQuantityProductInCart() {
+    public String getQuantityProductInCart() {
         return driver.findElement(QUANTITY_PRODUCT_IN_CART_PAGE).getText();
     }
 }

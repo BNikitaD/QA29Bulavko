@@ -4,6 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static pages.AuthorizationPage.*;
+import static tests.ITestConstants.*;
+import static tests.ITestConstants.EMPTY_PASSWORD_INPUT;
+import static tests.ITestConstants.NAME;
 
 public class AuthorizationTest extends BaseTest{
 

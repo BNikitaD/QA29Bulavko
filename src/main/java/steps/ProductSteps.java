@@ -1,11 +1,11 @@
 package steps;
 
-import Waiters.Waiter;
+import waiters.Waiter;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 
-import static Waiters.Waiter.PROMOCODE;
+import static waiters.Waiter.PROMOCODE;
 
 public class ProductSteps {
 
@@ -37,8 +37,7 @@ public class ProductSteps {
     }
 
     @Step
-    public ProductSteps checkQuantityProductInCart() {
-        productPage.checkQuantityProductInCart();
-        return this;
+    public String getQuantityProductInCart() {
+       return productPage.getQuantityProductInCart();
     }
 }

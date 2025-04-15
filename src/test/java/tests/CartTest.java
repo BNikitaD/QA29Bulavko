@@ -10,13 +10,13 @@ public class CartTest extends BaseTest {
         mainSteps.registrationPage();
         authorizationSteps.enterWithValidDataInPasswordOption("12345678Emall!", "291561848");
         productSteps.promocodeModalButton();
-        mainSteps.searchProductThroughInputSearchField();
+        mainSteps.searchProductThroughInputSearchField("кофе");
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
         mainSteps.clickOnCartPage();
         cartSteps.excellentButton()
                 .chooseAddressFromPickUpOption()
-                .addProductFromCartInPlus("Кофе молотый «Egoiste» Noir, натуральный, 100 г", 3)
+                .increaseProductQuantityInCart("Кофе молотый «Egoiste» Noir, натуральный, 100 г", 3)
                 .uncheckCheckbox()
                 .paymentMethod()
                 .selectPaymentMethodInModal()

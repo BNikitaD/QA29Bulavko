@@ -1,6 +1,5 @@
 package tests;
 
-import constants.IConstants;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,78 +17,78 @@ public class MainTest extends BaseTest {
 
     @Test(description = "this test check search input")
     public void searchProductInSearchInput() {
-        mainSteps.searchProductThroughInputSearchField();
+        mainSteps.searchProductThroughInputSearchField("кофе");
         Assert.assertEquals(driver.getCurrentUrl(), URL_OF_PRODUCT);
     }
 
     @DataProvider(name = "mainStepsDataProvider")
     public Object[][] mainStepsDataProvider() {
         return new Object[][]{
-                {"clickMainButton"},
-                {"clickOrders"},
-                {"clickFavorites"},
-                {"clickOnCartPage"},
-                {"clickActions"},
-                {"clickPaymentInInstallments"},
-                {"clickLuckyGoods"},
-                {"clickUrgentGoods"},
-                {"clickTakeMore"},
-                {"clickCategoryDiapers"},
-                {"clickCategoryForCleaning"},
-                {"clickCategoryBicycles"}
+                {"clickMainButton", MAIN_PAGE_URL},
+                {"clickOrders", ORDERS},
+                {"clickFavorites", FAVORITES},
+                {"clickOnCartPage", CART},
+                {"clickActions", ACTIONS},
+                {"clickPaymentInInstallments", PAYMENT_IN_INSTALLMENTS},
+                {"clickLuckyGoods", LUCKY_GOODS},
+                {"clickUrgentGoods", URGENT_GOODS},
+                {"clickTakeMore", TAKE_MORE},
+                {"clickCategoryDiapers", CATEGORY4649_DIAPERS},
+                {"clickCategoryForCleaning", CATEGORY3944_FOR_CLEANING},
+                {"clickCategoryBicycles", CATEGORY4353_BICYCLES}
         };
     }
 
     @Test(dataProvider = "mainStepsDataProvider")
-    public void clickOnMainButtonForUser(String action) {
+    public void clickOnMainButtonForUser(String action, String expectedResult) {
         switch (action) {
             case "clickMainButton":
                 mainSteps.clickMainButton();
-                Assert.assertEquals(driver.getCurrentUrl(), MAIN_PAGE_URL);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickOrders":
                 mainSteps.clickOrders();
-                Assert.assertEquals(driver.getCurrentUrl(), ORDERS);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickFavorites":
                 mainSteps.clickFavorites();
-                Assert.assertEquals(driver.getCurrentUrl(), FAVORITES);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickOnCartPage":
                 mainSteps.clickOnCartPage();
-                Assert.assertEquals(driver.getCurrentUrl(), CART);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickActions":
                 mainSteps.clickActions();
-                Assert.assertEquals(driver.getCurrentUrl(), ACTIONS);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickPaymentInInstallments":
                 mainSteps.clickPaymentInInstallments();
-                Assert.assertEquals(driver.getCurrentUrl(), PAYMENT_IN_INSTALLMENTS);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickLuckyGoods":
                 mainSteps.clickLuckyGoods();
-                Assert.assertEquals(driver.getCurrentUrl(), LUCKY_GOODS);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickUrgentGoods":
                 mainSteps.clickUrgentGoods();
-                Assert.assertEquals(driver.getCurrentUrl(), URGENT_GOODS);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickTakeMore":
                 mainSteps.clickTakeMore();
-                Assert.assertEquals(driver.getCurrentUrl(), TAKE_MORE);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryDiapers":
                 mainSteps.clickCategoryDiapers();
-                Assert.assertEquals(driver.getCurrentUrl(), CATEGORY4649_DIAPERS);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryForCleaning":
                 mainSteps.clickCategoryForCleaning();
-                Assert.assertEquals(driver.getCurrentUrl(), CATEGORY3944_FOR_CLEANING);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryBicycles":
                 mainSteps.clickCategoryBicycles();
-                Assert.assertEquals(driver.getCurrentUrl(), CATEGORY4353_BICYCLES);
+                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
         }
     }

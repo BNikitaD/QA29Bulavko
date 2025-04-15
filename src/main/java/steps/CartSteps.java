@@ -1,10 +1,10 @@
 package steps;
 
-import Waiters.Waiter;
+import waiters.Waiter;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.CartPage;
-import static Waiters.Waiter.PAYMENT_METHOD;
+import static waiters.Waiter.PAYMENT_METHOD;
 import static pages.CartPage.*;
 
 public class CartSteps {
@@ -29,8 +29,8 @@ public class CartSteps {
     }
 
     @Step
-    public CartSteps addProductFromCartInPlus(String productName, int addQuantity) {
-        cartPage.addProductInPlus(productName, addQuantity);
+    public CartSteps increaseProductQuantityInCart(String productName, int addQuantity) {
+        cartPage.increaseProductQuantityInCart(productName, addQuantity);
         return this;
     }
 
@@ -66,7 +66,7 @@ public class CartSteps {
 
     @Step
     public CartSteps selectPaymentMethodInModal() {
-        waiter.waitForElement(driver, PAYMENT_METHOD, 7);
+        waiter.waitForElement(driver, PAYMENT_METHOD, 7).click();
         return this;
     }
 }

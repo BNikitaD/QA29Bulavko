@@ -16,7 +16,7 @@ public class AuthorizationSteps {
 
     @Step
     public AuthorizationSteps authorizationWithInvalidPhoneNumber(String tel) {
-        authorizationPage.logjnWithInvalidPhoneNumber(tel);
+        authorizationPage.loginWithInvalidPhoneNumber(tel);
         return this;
     }
 
@@ -40,7 +40,7 @@ public class AuthorizationSteps {
 
     @Step
     public AuthorizationSteps enterWithValidDataInPasswordOption(String password, String tel) {
-        authorizationPage.loginInPasswordOption(password, tel);
+        authorizationPage.loginWithPasswordOption(password, tel);
         return this;
     }
 

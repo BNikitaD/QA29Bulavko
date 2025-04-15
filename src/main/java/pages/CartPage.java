@@ -1,11 +1,13 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import elements.Checkbox;
 
+@Log4j2
 public class CartPage extends BasePage {
 
     public static final By ADD_ADDRESS_MAIN_BUTTON = By.xpath("//*[@type='button' and .//span[text()='Добавить адрес']]");
@@ -23,10 +25,11 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
-    public void addProductInPlus(String productName, int addQuantity) {
+    public void increaseProductQuantityInCart(String productName, int addQuantity) {
         WebElement addProduct = driver.findElement(By.xpath(String.format(INCREASE_PRODUCT_COUNT_BY_NAME, productName)));
         for (int i = 0; i < addQuantity; i++) {
             addProduct.click();
+            log.info("Нажато увеличения количества товара");
         }
     }
 
@@ -34,19 +37,23 @@ public class CartPage extends BasePage {
         WebElement removeProduct = driver.findElement(By.xpath("//*[@aria-label='Отнять' and contains(@class, 'counter_counter__button_minus__BJhzD') and contains(text(), '" + productName + "')]"));
         for (int i = 0; i < removeQuantity; i++) {
             removeProduct.click();
+            log.info("Нажато уменьшения количества товара");
         }
     }
 
     public void uncheckCheckbox() {
+        log.info("Снятие отметки с чекбокса");
         new Checkbox(driver, "removeSecondProduct").setCheckboxValue(false);
     }
 
 
     public void clickCheckout() {
+        log.info("Нажатие на кнопку оформления заказа");
         driver.findElement(CHECKOUT_BUTTON).click();
     }
 
     public void clickOnPaymentMethod() {
+        log.info("Нажатие на кнопку выбора способа оплаты");
         driver.findElement(PAYMENT_METHOD_BUTTON).click();
     }
     public void clickOnExcellentButton() {

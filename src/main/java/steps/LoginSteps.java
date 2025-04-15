@@ -1,11 +1,11 @@
 package steps;
 
-import Waiters.Waiter;
+import waiters.Waiter;
 import entity.User;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
-import static Waiters.Waiter.AGREEMENT;
+import static waiters.Waiter.AGREEMENT;
 
 public class LoginSteps {
 
@@ -30,7 +30,7 @@ public class LoginSteps {
     public LoginSteps noValidRegistration(User user) {
         loginPage.clickRegistrationButton();
         loginPage.fillLoginForm(user);
-        loginPage.checkBox();
+        loginPage.setCheckbox();
         loginPage.clickScrollDownButton();
         return this;
     }
@@ -39,7 +39,7 @@ public class LoginSteps {
     public LoginSteps successfulRegistration(User user) {
         loginPage.clickRegistrationButton();
         loginPage.fillLoginForm(user);
-        loginPage.checkBox();
+        loginPage.setCheckbox();
         waiter.waitForElement(driver, AGREEMENT, 10);
         loginPage.clickScrollDownButton();
         loginPage.clickMainCheckBoxInModal();
@@ -49,8 +49,8 @@ public class LoginSteps {
     }
 
     @Step
-    public String getCreateAccount() {
-        return loginPage.getCreateAccount();
+    public String getCreateAccountText() {
+        return loginPage.getCreateAccountText();
     }
 
     @Step

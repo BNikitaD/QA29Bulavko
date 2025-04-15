@@ -1,92 +1,104 @@
 package pages;
 
-import constants.IConstants;
+import elements.Button;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.*;
 
+@Log4j2
 public class MainPage extends BasePage{
 
-    public static final By MAIN_BUTTON = By.xpath("//*[@src='https://api-preprod.emall.by/storage/admin/images/2Ndf4o1cG2umQSgVOpE1wAKtgvtiAhCdjNre291A.svg']");
-    public static final By ENTER_BUTTON = By.xpath("//*[text()='Войти']");
-    public static final By ACTIONS = By.xpath("//*[@href='https://emall.by/actions']");
-    public static final By PAYMENT_IN_INSTALLMENTS = By.xpath("//*[@href='https://emall.by/news/3']");
-    public static final By LUCKY_GOODS = By.xpath("//*[@href='https://emall.by/actions/lucky-goods']");
-    public static final By URGENT_GOODS = By.xpath("//*[@href='https://emall.by/actions/urgent-goods']");
-    public static final By TAKE_MORE = By.xpath("//*[@href='https://emall.by/actions/take-more']");
-    public static final By CATEGORY4649_DIAPERS = By.xpath("//*[text()='Подгузники' and @href='https://emall.by/category/4649']");
-    public static final By CATEGORY3944_FOR_CLEANING = By.xpath("//*[text()='Для уборки' and @href='https://emall.by/category/3944']");
-    public static final By CATEGORY4353_BICYCLES = By.xpath("//*[text()='Велосипеды' and @href='https://emall.by/category/4353']");
-    public static final By ORDERS = By.xpath("//*[contains(text(),Заказы)]");
-    public static final By FAVORITES = By.xpath("//*[contains(text(),Избранное)]");
-    public static final By CART = By.xpath("//*[@href='https://emall.by/cart']");
+    public static final By MAIN_BUTTON = By.xpath("//*[contains(@class, 'logo_logo__LbCcG')]");
+//    public static final By ENTER_BUTTON = By.xpath("//*[text()='Войти']");
+//    //public static final By ACTIONS = By.xpath("//*[@href='https://emall.by/actions']");
+//    //public static final By PAYMENT_IN_INSTALLMENTS = By.xpath("//*[@href='https://emall.by/news/3']");
+//    //public static final By LUCKY_GOODS = By.xpath("//*[@href='https://emall.by/actions/lucky-goods']");
+//    public static final By URGENT_GOODS = By.xpath("//*[@href='https://emall.by/actions/urgent-goods']");
+//    public static final By TAKE_MORE = By.xpath("//*[@href='https://emall.by/actions/take-more']");
+//   public static final By CATEGORY4649_DIAPERS = By.xpath("//*[text()='Подгузники' and @href='https://emall.by/category/4649']");
+//    public static final By CATEGORY3944_FOR_CLEANING = By.xpath("//*[text()='Для уборки' and @href='https://emall.by/category/3944']");
+//    public static final By CATEGORY4353_BICYCLES = By.xpath("//*[text()='Велосипеды' and @href='https://emall.by/category/4353']");
+//    public static final By ORDERS = By.xpath("//*[contains(text(),Заказы)]");
+//    public static final By FAVORITES = By.xpath("//*[contains(text(),Избранное)]");
+//    public static final By CART = By.xpath("//*[@href='https://emall.by/cart']");
     public static final By SEARCH_INPUT = By.xpath("//*[@enterkeyhint='search']");
-    public static final By RESULT_ELEMENT = By.xpath("//*[@aria-label=\"Переход на страницу с товаром Кофе молотый «Egoiste» Noir, натуральный, 100 г\"]");
+    public static final String RESULT_ELEMENT_TEMPLATE = "//*[@aria-label=\"Переход на страницу с товаром %s\"]";
+
 
     public MainPage(WebDriver driver) {
         super(driver);
-
-    }
-
-    public void clickLoginButton() {
-        driver.findElement(ENTER_BUTTON).click();
     }
 
     public void clickActions() {
-        driver.findElement(ACTIONS).click();
+        log.info("Нажатие на кнопку 'Акции'");
+        new Button(driver, "Акции").clickHeaders();
     }
 
     public void clickPaymentInInstallments() {
-        driver.findElement(PAYMENT_IN_INSTALLMENTS).click();
+        log.info("Нажатие на кнопку 'Оплата частями'");
+        new Button(driver, "Оплата частями").clickHeaders();
     }
 
     public void clickLuckyGoods() {
-        driver.findElement(LUCKY_GOODS).click();
+        log.info("Нажатие на кнопку 'Товары-везунчики'");
+        new Button(driver, "Товары-везунчики").clickHeaders();
     }
 
     public void clickUrgentGoods() {
-        driver.findElement(URGENT_GOODS).click();
+        log.info("Нажатие на кнопку 'Срочный товар!'");
+        new Button(driver, "Срочный товар!").clickHeaders();
     }
 
     public void clickTakeMore() {
-        driver.findElement(TAKE_MORE).click();
+        log.info("Нажатие на кнопку 'Упаковкой выгоднее'");
+        new Button(driver, "Упаковкой выгоднее").clickHeaders();
     }
 
     public void clickCategoryDiapers() {
-        driver.findElement(CATEGORY4649_DIAPERS).click();
+        log.info("Нажатие на кнопку 'Подгузники'");
+        new Button(driver, "Подгузники").clickHeaders();
     }
 
     public void clickCategoryForCleaning() {
-        driver.findElement(CATEGORY3944_FOR_CLEANING).click();
+        log.info("Нажатие на кнопку 'Для уборки'");
+        new Button(driver, "Для уборки").clickHeaders();
     }
 
     public void clickCategoryBicycles() {
-        driver.findElement(CATEGORY4353_BICYCLES).click();
+        log.info("Нажатие на кнопку 'Велосипеды'");
+        new Button(driver, "Велосипеды").clickHeaders();
     }
 
     public void clickEnterButton() {
-        driver.findElement(ENTER_BUTTON).click();
+        log.info("Нажатие на кнопку 'Войти'");
+        new Button(driver, "Войти").clickMainButtonsForUser();
     }
 
     public void clickMainButton() {
+        log.info("Нажатие на главную кнопку(Emall)");
         driver.findElement(MAIN_BUTTON).click();
     }
 
     public void clickOrders() {
-        driver.findElement(ORDERS).click();
+        log.info("Нажатие на кнопку 'Заказы'");
+        new Button(driver, "Заказы").clickMainButtonsForUser();
     }
 
     public void clickFavorites() {
-        driver.findElement(FAVORITES).click();
+        log.info("Нажатие на кнопку 'Избранное'");
+        new Button(driver, "Избранное").clickMainButtonsForUser();
     }
 
-    public void searchProductThroughInputSearchField() {
-        driver.findElement(SEARCH_INPUT).sendKeys("кофе");
+    public void searchProductThroughInputSearchField(String productName) {
+        driver.findElement(SEARCH_INPUT).sendKeys(productName);
         driver.findElement(SEARCH_INPUT).sendKeys(Keys.RETURN);
-        WebElement targetElement = waiter.waitForElement(driver, RESULT_ELEMENT, 7);
+        By resultElement = By.xpath(String.format(RESULT_ELEMENT_TEMPLATE, productName));
+        WebElement targetElement = waiter.waitForElement(driver, resultElement, 7);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
         targetElement.click();
     }
 
     public void clickOnCartPage() {
-        driver.findElement(CART).click();
+        log.info("Нажатие на кнопку 'Корзина'");
+        new Button(driver, "Корзина").clickMainButtonsForUser();
     }
 }

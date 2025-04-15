@@ -9,7 +9,7 @@ public class LoginTest extends LoginPrecondition {
     public void loginWithValidData() {
         mainSteps.registrationPage();
         loginSteps.successfulRegistration(VALID_USER);
-        Assert.assertEquals(loginSteps.getCreateAccount(), CREATE_ACCOUNT);
+        Assert.assertEquals(loginSteps.getCreateAccountText(), CREATE_ACCOUNT);
     }
 
     @Test(description = "this test with empty checkbox")
