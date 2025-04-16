@@ -19,7 +19,7 @@ pipeline {
             git branch: "${params.BRANCH}", url: 'https://github.com/BNikitaD/QA29Bulavko.git'
 
             //Run Maven on a Unix agent.
-            sh "mvn clean -Dtest=AuthorizationTest test"
+            sh "mvn clean -Dtest=ProductTest test"
 
             // To run Maven on a Windows agent, use
             //bat "mvn clean -Dtest=LoginTest test"
