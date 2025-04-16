@@ -88,8 +88,8 @@ public class MainPage extends BasePage{
         new Button(driver, "Избранное").clickMainButtonsForUser();
     }
 
-    public void searchProductThroughInputSearchField(String productName) {
-        driver.findElement(SEARCH_INPUT).sendKeys(productName);
+    public void searchProductThroughInputSearchField(String searchName,String productName) {
+        driver.findElement(SEARCH_INPUT).sendKeys(searchName);
         driver.findElement(SEARCH_INPUT).sendKeys(Keys.RETURN);
         By resultElement = By.xpath(String.format(RESULT_ELEMENT_TEMPLATE, productName));
         WebElement targetElement = waiter.waitForElement(driver, resultElement, 7);

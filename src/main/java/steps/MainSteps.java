@@ -52,8 +52,8 @@ public class MainSteps {
     }
 
     @Step
-    public MainSteps searchProductThroughInputSearchField(String productName) {
-        mainPage.searchProductThroughInputSearchField(productName);
+    public MainSteps searchProductThroughInputSearchField(String searchName,String productName) {
+        mainPage.searchProductThroughInputSearchField(searchName ,productName);
         return this;
     }
 

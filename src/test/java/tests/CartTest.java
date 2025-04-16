@@ -10,7 +10,7 @@ public class CartTest extends BaseTest {
         mainSteps.registrationPage();
         authorizationSteps.enterWithValidDataInPasswordOption("12345678Emall!", "291561848");
         productSteps.promocodeModalButton();
-        mainSteps.searchProductThroughInputSearchField("кофе");
+        mainSteps.searchProductThroughInputSearchField("кофе", "Кофе молотый «Egoiste» Espresso, 250 г");
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
         mainSteps.clickOnCartPage();
