@@ -9,6 +9,7 @@ public class ProductTest extends BaseTest{
 
     @Test(description = "this add main and product from widget in cart")
     public void addMainProductAndFromWidget() {
+        mainSteps.openPageAndAcceptCookies();
         mainSteps.searchProductThroughInputSearchField("кофе");
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
