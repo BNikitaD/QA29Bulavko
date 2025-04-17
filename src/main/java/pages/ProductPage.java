@@ -10,7 +10,7 @@ public class ProductPage extends BasePage {
     public static final By ADD_PRODUCT_FROM_WIDGET = By.xpath("//*[contains(@class, 'icon-cart-20')]");
     public static final By ADD_MAIN_PRODUCT = By.xpath("//*[@class='adult-wrapper_adult__yIhdE buy_adult__OKX2j']//button[.//span[text()='В корзину']]");
     public static final By QUANTITY_PRODUCT_IN_CART_PAGE = By.xpath("//*[@class='badge-animation_badge__nBsm5 medium']");
-    public static final String QUANTITY_IN_CART = "2";
+    public static final String QUANTITY_IN_CART = "1";
 
     public ProductPage(WebDriver driver) {
         super(driver);
