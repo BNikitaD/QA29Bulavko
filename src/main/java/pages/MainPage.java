@@ -8,18 +8,6 @@ import org.openqa.selenium.*;
 public class MainPage extends BasePage{
 
     public static final By MAIN_BUTTON = By.xpath("//*[contains(@class, 'logo_logo__LbCcG')]");
-//    public static final By ENTER_BUTTON = By.xpath("//*[text()='Войти']");
-//    //public static final By ACTIONS = By.xpath("//*[@href='https://emall.by/actions']");
-//    //public static final By PAYMENT_IN_INSTALLMENTS = By.xpath("//*[@href='https://emall.by/news/3']");
-//    //public static final By LUCKY_GOODS = By.xpath("//*[@href='https://emall.by/actions/lucky-goods']");
-//    public static final By URGENT_GOODS = By.xpath("//*[@href='https://emall.by/actions/urgent-goods']");
-//    public static final By TAKE_MORE = By.xpath("//*[@href='https://emall.by/actions/take-more']");
-//   public static final By CATEGORY4649_DIAPERS = By.xpath("//*[text()='Подгузники' and @href='https://emall.by/category/4649']");
-//    public static final By CATEGORY3944_FOR_CLEANING = By.xpath("//*[text()='Для уборки' and @href='https://emall.by/category/3944']");
-//    public static final By CATEGORY4353_BICYCLES = By.xpath("//*[text()='Велосипеды' and @href='https://emall.by/category/4353']");
-//    public static final By ORDERS = By.xpath("//*[contains(text(),Заказы)]");
-//    public static final By FAVORITES = By.xpath("//*[contains(text(),Избранное)]");
-//    public static final By CART = By.xpath("//*[@href='https://emall.by/cart']");
     public static final By SEARCH_INPUT = By.xpath("//*[@enterkeyhint='search']");
     public static final String RESULT_ELEMENT_TEMPLATE = "//*[@aria-label=\"Переход на страницу с товаром %s\"]";
 
