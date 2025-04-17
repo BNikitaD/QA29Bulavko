@@ -18,19 +18,19 @@ public class ProductSteps {
         this.driver = driver;
     }
 
-    @Step
+    @Step("add main Product")
     public ProductSteps addMainProduct() {
         productPage.addMainProduct();
         return this;
     }
 
-    @Step
-    public ProductSteps promocodeModalButton() {
+    @Step("click OK in Promocode modal window")
+    public ProductSteps clickPromocodeModalWindow() {
         waiter.waitForElement(driver, PROMOCODE, 7).click();
         return this;
     }
 
-    @Step
+    @Step("add product from widget")
     public ProductSteps addProductFromWidget() {
         productPage.addProductFromWidget();
         return this;

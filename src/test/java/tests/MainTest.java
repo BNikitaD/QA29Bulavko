@@ -10,13 +10,13 @@ import static tests.ITestConstants.*;
 public class MainTest extends BaseTest {
 
     @Test()
-    public void goToRegistrationPage() {
-        mainSteps.registrationPage();
+    public void registerTest() {
+        mainSteps.register();
         Assert.assertEquals(driver.getCurrentUrl(), ENTRY_PAGE);
     }
 
     @Test(description = "this test check search input")
-    public void searchProductInSearchInput() {
+    public void searchProductInSearchInputTest() {
         mainSteps.searchProductThroughInputSearchField("кофе", "Кофе молотый «Egoiste» Espresso, 250 г");
         Assert.assertEquals(driver.getCurrentUrl(), URL_OF_PRODUCT);
     }
@@ -40,7 +40,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test(dataProvider = "mainStepsDataProvider")
-    public void clickOnMainButtonForUser(String action, String expectedResult) {
+    public void clickOnMainButtonForUserTest(String action, String expectedResult) {
         switch (action) {
             case "clickMainButton":
                 mainSteps.openPageAndAcceptCookies();

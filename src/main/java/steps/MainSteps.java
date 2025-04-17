@@ -19,100 +19,94 @@ public class MainSteps {
         this.driver = driver;
     }
 
-    @Step
-    public MainSteps registrationPage() {
+    @Step("open registration page")
+    public MainSteps register() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
         mainPage.clickEnterButton();
         return this;
     }
 
-    @Step
-    public MainSteps clickEnterButton() {
-        mainPage.clickEnterButton();
-        return this;
-    }
-
-    @Step
+    @Step("click on the logo Emall")
     public MainSteps clickMainButton() {
         mainPage.clickMainButton();
         return this;
     }
 
-    @Step
+    @Step("click on Orders page")
     public MainSteps clickOrders() {
         mainPage.clickOrders();
         return this;
     }
 
-    @Step
+    @Step("click in Favorites page")
     public MainSteps clickFavorites() {
         mainPage.clickFavorites();
         return this;
     }
 
-    @Step
+    @Step("go to the product card using the search bar")
     public MainSteps searchProductThroughInputSearchField(String searchName,String productName) {
         mainPage.searchProductThroughInputSearchField(searchName ,productName);
         return this;
     }
 
-    @Step
+    @Step("accepting Cookes")
     public MainSteps openPageAndAcceptCookies() {
         mainPage.openPage(MAIN_PAGE_URL);
         waiter.waitForElement(driver, ACCEPT_COOKIE, 7).click();
         return this;
     }
 
-    @Step
+    @Step("click on Cart page")
     public MainSteps clickOnCartPage() {
         mainPage.clickOnCartPage();
         return this;
     }
 
-    @Step
+    @Step("click on Actions page")
     public MainSteps clickActions() {
         mainPage.clickActions();
         return this;
     }
 
-    @Step
+    @Step("click payment in installments page")
     public MainSteps clickPaymentInInstallments() {
         mainPage.clickPaymentInInstallments();
         return this;
     }
 
-    @Step
+    @Step(" click lucky goos page")
     public MainSteps clickLuckyGoods() {
         mainPage.clickLuckyGoods();
         return this;
     }
 
-    @Step
+    @Step("click urgent goods page")
     public MainSteps clickUrgentGoods() {
         mainPage.clickUrgentGoods();
         return this;
     }
 
-    @Step
+    @Step("click take more page")
     public MainSteps clickTakeMore() {
         mainPage.clickTakeMore();
         return this;
     }
 
-    @Step
+    @Step("click category diapers page")
     public MainSteps clickCategoryDiapers() {
         mainPage.clickCategoryDiapers();
         return this;
     }
 
-    @Step
+    @Step("click in Category for cleaning")
     public MainSteps clickCategoryForCleaning() {
         mainPage.clickCategoryForCleaning();
         return this;
     }
 
-    @Step
+    @Step("click Category for bicycles")
     public MainSteps clickCategoryBicycles() {
         mainPage.clickCategoryBicycles();
         return this;

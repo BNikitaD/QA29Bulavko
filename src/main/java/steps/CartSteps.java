@@ -5,7 +5,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.CartPage;
 import static waiters.Waiter.PAYMENT_METHOD;
-import static pages.CartPage.*;
 
 public class CartSteps {
 
@@ -19,54 +18,68 @@ public class CartSteps {
         this.driver = driver;
     }
 
+    //TODO: сделать комменты
+    @Step("Selecting the delivery address for the product to the order pick-up point")
     public CartSteps chooseAddressFromPickUpOption() {
-        waiter.waitForElement(driver, ADD_ADDRESS_MAIN_BUTTON, 7).click();
-        waiter.waitForElement(driver, CHOOSE_ADDRESS_BUTTON_IN_MODAL_WINDOW, 7).click();
-        waiter.waitForElement(driver, ADD_ADDRESS_FROM_MAP, 7).click();
-        waiter.waitForElement(driver, ADD_ORDER_PICK_UP_POINT_OPTION, 7).click();
-        waiter.waitForElement(driver, READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS, 8).click();
+        cartPage.clickAddAddressMainButton();
+        cartPage.clickChooseAddressButtonInModalWindow();
+        cartPage.clickAddressFromMap();
+        cartPage.clickAddOrderPickUpPointOption();
+        cartPage.clickReadyButtonInModalWindowForChoosingAddress();
         return this;
     }
 
-    @Step
+    @Step("increase the quantity of product through plus in the cart")
     public CartSteps increaseProductQuantityInCart(String productName, int addQuantity) {
         cartPage.increaseProductQuantityInCart(productName, addQuantity);
         return this;
     }
 
-    @Step
+    @Step("remove the quantity of product through plus in the cart")
     public CartSteps removeProductInMinus(String productName, int removeQuantity) {
         cartPage.removeProductInMinus(productName, removeQuantity);
         return this;
     }
 
-    @Step
-    public CartSteps uncheckCheckbox() {
-        cartPage.uncheckCheckbox();
+    @Step("unchecking the second product")
+    public CartSteps uncheckCheckboxSecondProduct() {
+        cartPage.uncheckCheckboxSecondProduct();
         return this;
     }
 
-    @Step
+    @Step("click checkout")
     public CartSteps clickCheckout() {
         cartPage.clickCheckout();
         return this;
     }
 
-    @Step
-    public CartSteps excellentButton() {
+    @Step("click Excellent button")
+    public CartSteps clickOnExcellentButton() {
         cartPage.clickOnExcellentButton();
         return this;
     }
 
-    @Step
+    @Step("clicking on the payment method button")
     public CartSteps paymentMethod() {
         cartPage.clickOnPaymentMethod();
         return this;
     }
 
-    @Step
-    public CartSteps selectPaymentMethodInModal() {
+    @Step("select payment method 'New card online' in modal window")
+    public CartSteps selectNewCardOnlinePaymentMethodInModalWindow() {
         waiter.waitForElement(driver, PAYMENT_METHOD, 7).click();
+        return this;
+    }
+
+    @Step("full flow in Cart page for checkout after user added product from website")
+    public CartSteps setActionsInProductPage(String productName, int addQuantity) {
+        clickOnExcellentButton();
+        chooseAddressFromPickUpOption();
+        increaseProductQuantityInCart(productName, addQuantity);
+        uncheckCheckboxSecondProduct();
+        paymentMethod();
+        selectNewCardOnlinePaymentMethodInModalWindow();
+        clickCheckout();
         return this;
     }
 }

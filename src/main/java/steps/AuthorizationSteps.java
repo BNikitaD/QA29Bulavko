@@ -14,37 +14,37 @@ public class AuthorizationSteps {
         this.driver = driver;
     }
 
-    @Step
+    @Step("login to profile with invalid phone number")
     public AuthorizationSteps authorizationWithInvalidPhoneNumber(String tel) {
         authorizationPage.loginWithInvalidPhoneNumber(tel);
         return this;
     }
 
-    @Step
+    @Step("login not unregistered phone number")
     public AuthorizationSteps authorizationWithNonPhoneNumber(String tel) {
         authorizationPage.loginWithNonPhoneNumber(tel);
         return this;
     }
 
-    @Step
+    @Step("login with empty fields in Phone code option")
     public AuthorizationSteps authorizationWithoutAnyFieldsInPhoneOption() {
-        authorizationPage.loginWithoutAnyFieldsInPhoneOption();
+        authorizationPage.clickGetCode();
         return this;
     }
 
-    @Step
+    @Step("login in profile with empty fields")
     public AuthorizationSteps enterInPasswordWithEmptyFields() {
-        authorizationPage.checkLoginWithEmptyFields();
+        authorizationPage.loginWithEmptyFields();
         return this;
     }
 
-    @Step
+    @Step("login with valid data in password option")
     public AuthorizationSteps enterWithValidDataInPasswordOption(String password, String tel) {
         authorizationPage.loginWithPasswordOption(password, tel);
         return this;
     }
 
-    @Step
+    @Step("login in password option with empty password input")
     public AuthorizationSteps enterWithEmptyPasswordInPasswordOption(String tel) {
         authorizationPage.loginWithEmptyPasswordInPasswordOption(tel);
         return this;
@@ -57,7 +57,7 @@ public class AuthorizationSteps {
 
     @Step
     public String getErrorMessageNonLoginedPhoneNumber() {
-        return authorizationPage.getErrorMessageNonLoginedPhoneNumber();
+        return authorizationPage.getErrorMessageNonLoggedInPhoneNumber();
     }
 
     @Step

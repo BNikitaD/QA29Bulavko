@@ -3,16 +3,15 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static pages.ProductPage.QUANTITY_IN_CART;
 
 public class ProductTest extends BaseTest{
 
     @Test(description = "this add main and product from widget in cart")
-    public void addMainProductAndFromWidget() {
+    public void addMainProductAndFromWidgetTest() {
         mainSteps.openPageAndAcceptCookies();
         mainSteps.searchProductThroughInputSearchField("кофе", "Кофе молотый Dallmayr prodomo 500гр");
         productSteps.addMainProduct();
         productSteps.addProductFromWidget();
-        Assert.assertEquals(productSteps.getQuantityProductInCart(), QUANTITY_IN_CART);
+        Assert.assertEquals(productSteps.getQuantityProductInCart(), "2");
     }
 }

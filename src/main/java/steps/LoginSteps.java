@@ -18,33 +18,32 @@ public class LoginSteps {
         this.driver = driver;
     }
 
-    @Step
-    public LoginSteps registrationFieldsandSubmitButton(User user) {
-        loginPage.clickRegistrationButton();
-        loginPage.fillLoginForm(user);
-        loginPage.clickSubmitButton();
+    @Step("login new user in Registration page ")
+    public LoginSteps registrationFieldsAndSubmitButton(User user) {
+        loginPage.clickRegistrationButton()
+                 .fillLoginForm(user)
+                 .clickSubmitButton();
         return this;
     }
 
     @Step
     public LoginSteps noValidRegistration(User user) {
-        loginPage.clickRegistrationButton();
-        loginPage.fillLoginForm(user);
-        loginPage.setCheckbox();
-        loginPage.clickScrollDownButton();
+        loginPage.clickRegistrationButton()
+                 .fillLoginForm(user)
+                 .setCheckedAgreePolicy()
+                 .clickScrollDownButton();
         return this;
     }
 
-    @Step
+    @Step("full process of registration new user ")
     public LoginSteps successfulRegistration(User user) {
-        loginPage.clickRegistrationButton();
-        loginPage.fillLoginForm(user);
-        loginPage.setCheckbox();
+        loginPage.clickRegistrationButton()
+                 .fillLoginForm(user)
+                 .setCheckedAgreePolicy();
         waiter.waitForElement(driver, AGREEMENT, 10);
-        loginPage.clickScrollDownButton();
-        loginPage.clickMainCheckBoxInModal();
-        loginPage.clickAgreeButtonInModalWindow();
-        loginPage.clickSubmitButton();
+        loginPage.clickScrollDownButton()
+                 .clickAgreeButtonInModalWindow()
+                 .clickSubmitButton();
         return this;
     }
 
