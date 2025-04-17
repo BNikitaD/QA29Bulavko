@@ -73,7 +73,7 @@ public class AuthorizationPage extends BasePage {
 
     public String getErrorMessageNonLoginedPhoneNumber() {
         try {
-            WebElement errorMessageElement = driver.findElement(MESSAGE_NON_LOGINED_PHONE_NUMBER);
+            WebElement errorMessageElement = driver.findElement(MESSAGE_NON_LOGGED_IN_PHONE_NUMBER);
             if (errorMessageElement.isDisplayed()) {
                 String message = errorMessageElement.getText();
                 log.info("Сообщение об ошибке получено: ");
