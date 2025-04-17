@@ -43,50 +43,62 @@ public class MainTest extends BaseTest {
     public void clickOnMainButtonForUser(String action, String expectedResult) {
         switch (action) {
             case "clickMainButton":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickMainButton();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickOrders":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickOrders();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickFavorites":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickFavorites();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickOnCartPage":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickOnCartPage();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickActions":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickActions();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickPaymentInInstallments":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickPaymentInInstallments();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickLuckyGoods":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickLuckyGoods();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickUrgentGoods":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickUrgentGoods();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickTakeMore":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickTakeMore();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryDiapers":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickCategoryDiapers();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryForCleaning":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickCategoryForCleaning();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryBicycles":
+                mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickCategoryBicycles();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;

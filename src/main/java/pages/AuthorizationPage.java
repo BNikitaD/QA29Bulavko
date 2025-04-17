@@ -16,10 +16,11 @@ public class AuthorizationPage extends BasePage {
     public static final By ENTER_BUTTON = By.xpath("//*[@type='submit' and contains(.//span, 'Войти')]");
     public static final By VIEW_PASSWORD_BUTTON = By.xpath("//*[contains(@class, 'input_clickable')]");
     public static final By MESSAGE_INVALID_PHONE_NUMBER = By.xpath("//*[@class='new-input-phone_message__WsZQD']");
-    public static final By MESSAGE_NON_LOGINED_PHONE_NUMBER = By.xpath("//*[@class='new-input-phone_message__WsZQD']");
+    public static final By MESSAGE_NON_LOGGED_IN_PHONE_NUMBER = By.xpath("//*[@class='new-input-phone_message__WsZQD']");
     public static final By MESSAGE_EMPTY_PHONE_NUMBER= By.xpath("//*[@class='new-input-phone_message__WsZQD']");
     public static final By MESSAGE_EMPTY_PASSWORD_INPUT = By.xpath("//*[@class='password_error_message__SydTB']");
     public static final By MESSAGE_EMPTY_PASSWORD_AND_PHONE_NUMBER_INPUTS = By.xpath("//*[@class='password_error_message__SydTB']");
+    //TODO: поменять локатор
     public static final By NAME_OF_PROFILE = By.xpath("//*[contains(@class, 'actions_action__maxWidth__ekofB') and contains(@class, 'actions_action__text__x4EUd')]");
 
     public AuthorizationPage(WebDriver driver) {
