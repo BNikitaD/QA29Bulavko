@@ -13,7 +13,7 @@ public class Button {
     private String elementName;
 
     public void clickHeaders() {
-        String header = String.format("//*[@class=\"scrollable-menu_scrollable_menu__swiper__wrapper__gBlF2\"]", elementName);
+        String header = String.format("//div[@class='scrollable-menu_scrollable_menu__swiper__wrapper__gBlF2']//a[text()]", elementName);
         WebElement element = driver.findElement(By.xpath(header));
         element.click();
     }
