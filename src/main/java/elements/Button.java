@@ -19,7 +19,7 @@ public class Button {
     }
 
     public void clickMainButtonsForUser() {
-        String mainButtons = String.format("//*[@class='actions_actions__c5bn_']", elementName);
+        String mainButtons = String.format("//*[@class='actions_actions__c5bn_']//a[contains(@class, 'actions_action__button__ptOha')]", elementName);
         WebElement element = driver.findElement(By.xpath(mainButtons));
         element.click();
     }
