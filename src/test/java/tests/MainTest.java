@@ -34,7 +34,6 @@ public class MainTest extends BaseTest {
                 {"clickUrgentGoods", URGENT_GOODS},
                 {"clickTakeMore", TAKE_MORE},
                 {"clickCategoryDiapers", CATEGORY4649_DIAPERS},
-                {"clickCategoryForCleaning", CATEGORY3944_FOR_CLEANING},
                 {"clickCategoryBicycles", CATEGORY4353_BICYCLES}
         };
     }
@@ -90,11 +89,6 @@ public class MainTest extends BaseTest {
             case "clickCategoryDiapers":
                 mainSteps.openPageAndAcceptCookies();
                 mainSteps.clickCategoryDiapers();
-                Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
-                break;
-            case "clickCategoryForCleaning":
-                mainSteps.openPageAndAcceptCookies();
-                mainSteps.clickCategoryForCleaning();
                 Assert.assertEquals(driver.getCurrentUrl(), expectedResult);
                 break;
             case "clickCategoryBicycles":

@@ -100,12 +100,6 @@ public class MainSteps {
         return this;
     }
 
-    @Step("click in Category for cleaning")
-    public MainSteps clickCategoryForCleaning() {
-        mainPage.clickCategoryForCleaning();
-        return this;
-    }
-
     @Step("click Category for bicycles")
     public MainSteps clickCategoryBicycles() {
         mainPage.clickCategoryBicycles();

@@ -36,6 +36,9 @@ public class BaseTest {
     public void initPages() {
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
+        cartPage = new CartPage(driver);
+        productPage = new ProductPage(driver);
+        authorizationPage = new AuthorizationPage(driver);
         loginSteps = new LoginSteps(driver);
         mainSteps = new MainSteps(driver);
         authorizationSteps = new AuthorizationSteps(driver);
