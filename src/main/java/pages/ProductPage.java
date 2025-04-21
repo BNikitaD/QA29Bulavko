@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 @Log4j2
 public class ProductPage extends BasePage {
 
-    private static final By ADD_PRODUCT_FROM_WIDGET = By.xpath("//*[contains(@class, 'icon-cart-20')]");
-    private static final By ADD_MAIN_PRODUCT = By.xpath("//*[@class='adult-wrapper_adult__yIhdE buy_adult__OKX2j']//button[.//span[text()='В корзину']]");
+    private static final By ADD_PRODUCT_FROM_WIDGET = By.xpath("//*[contains(@class, 'btn_btn__jx6SQ') and contains(@class, 'offer-card_button')]");
+    private static final By ADD_MAIN_PRODUCT = By.xpath("//*[contains(@class, 'adult-wrapper_adult__yIhdE buy_adult__OKX2j')]");
     private static final By QUANTITY_PRODUCT_IN_CART_PAGE = By.xpath("//*[@class='badge-animation_badge__nBsm5 medium']");
 
     /**

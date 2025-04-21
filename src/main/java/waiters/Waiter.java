@@ -19,4 +19,9 @@ public class Waiter {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    public WebElement waitForElementClicable(WebDriver driver, By locator, long seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 }

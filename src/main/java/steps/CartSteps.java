@@ -73,7 +73,6 @@ public class CartSteps {
 
     @Step("full flow in Cart page for checkout after user added product from website")
     public CartSteps setActionsInProductPage(String productName, int addQuantity) {
-        clickOnExcellentButton();
         chooseAddressFromPickUpOption();
         increaseProductQuantityInCart(productName, addQuantity);
         uncheckCheckboxSecondProduct();

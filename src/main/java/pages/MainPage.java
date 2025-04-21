@@ -22,8 +22,6 @@ public class MainPage extends BasePage {
     private static final By OPENED_CATEGORY_BICYCLES = By.xpath("//*[contains(@class, 'heading_heading__text') and text()='Велосипеды']");
     private static final By OPENED_ORDERS = By.xpath("//*[@class='wrapper_title__hxKZS' and text()='Вход']");
     private static final By OPENED_FAVORITES = By.xpath("//*[@class='content_block__by4nx content_empty__dZfWc']");
-    private static final By OPENED_CART_PAGE = By.xpath("//*[@class='container empty_container__NFtkB container_max_size_xxl__8QPo6']");
-
     /**
      * Instantiates a new Main page.
      *
@@ -152,6 +150,6 @@ public class MainPage extends BasePage {
     public void clickOnCartPage() {
         log.info("Нажатие на кнопку 'Корзина'");
         new Button(driver, "Корзина").clickMainButtonsForUser();
-        waiter.waitForElement(driver, OPENED_CART_PAGE, 8);
+        waiter.waitForElement(driver, MAIN_BUTTON, 8);
     }
 }

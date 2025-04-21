@@ -17,12 +17,13 @@ public class CartPage extends BasePage {
     private static final By CHOOSE_ADDRESS_BUTTON_IN_MODAL_WINDOW = By.xpath("//button[contains(@class, 'recipients_add')]");
     private static final By ADD_ADDRESS_FROM_MAP = By.xpath("//*[@class='map_searchRight__list__card__dOW2U']/span[text()='г. Пинск,  Карла Маркса, д. 32']");
     private static final By ADD_ORDER_PICK_UP_POINT_OPTION = By.xpath("//button[@type='submit' and .//span[text()='Выбрать']]");
-    private static final By READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS = By.xpath("//*[@type='button' and .//span[text()='Готово']]");
-    private static final String INCREASE_PRODUCT_COUNT_BY_NAME = "//*[@aria-label='Добавить' and contains(@class, 'counter_counter__button_plus__bsTiE') and contains(text(), '%s')]";
+    private static final By READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS = By.xpath("//*[contains(@class, 'btn_btn_colour_black') and span[text()='Готово']]");
+    //private static final String INCREASE_PRODUCT_COUNT_BY_NAME = "//*[@aria-label='Добавить' and contains(@class, 'counter_counter__button') and contains(text(), '%s')]";
+    private static final String INCREASE_PRODUCT_COUNT_BY_NAME = "(//*[@aria-label='Добавить' and contains(@class, 'counter_counter__button')])[1]";
     private static final By CHECKOUT_BUTTON = By.xpath("//*[@type='button'][.//span[text()='Оформить заказ']]");
     private static final By PAYMENT_METHOD_BUTTON = By.xpath("//*[contains(@class,'select-button_title')]");
     private static final By EXCELLENT_BUTTON = By.xpath("//*[ @type='button'][.//span[text()='Отлично!']]");
-    private static final String CHECKBOX_LOCATOR = "//span[contains(text(), '%s')]/preceding-sibling::input[@type='checkbox']";
+    private static final String CHECKBOX_LOCATOR = "(//span[contains(@class, 'checkbox_checkbox__pseudo')])[3]";
 
     /**
      * Instantiates a new Cart page.
@@ -66,7 +67,7 @@ public class CartPage extends BasePage {
      */
     public void uncheckCheckboxSecondProduct() {
         log.info("Снятие отметки с чекбокса для второго товара");
-        new Checkbox("removeSecondProduct", driver).setCheckboxValue(false, CHECKBOX_LOCATOR);
+        new Checkbox("removeSecondProduct", driver).setCheckboxValue(true, CHECKBOX_LOCATOR);
     }
 
     /**
@@ -126,7 +127,7 @@ public class CartPage extends BasePage {
      * Click ready button in modal window for choosing address.
      */
     public void clickReadyButtonInModalWindowForChoosingAddress() {
-        waiter.waitForElement(driver, READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS, 7).click();
+        waiter.waitForElementClicable(driver, READY_BUTTON_IN_MODAL_WINDOW_FOR_CHOOSING_ADDRESS, 9). click();
         log.info("Кнопка Готово нажата");
     }
 }
