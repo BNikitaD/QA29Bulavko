@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class CartTest extends BaseTest {
 
-    @Test(description = "this test with full flow for checkout product with valid data")
+    @Test(description = "this test with full flow for checkout product with valid data", retryAnalyzer = Retry.class)
     public void checkoutWithValidFlow() {
         mainSteps.register();
         authorizationSteps.enterWithValidDataInPasswordOption("12345678Emall!", "291561848");
