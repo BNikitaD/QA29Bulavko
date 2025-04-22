@@ -75,7 +75,7 @@ public class CartSteps {
     public CartSteps setActionsInProductPage(String productName, int addQuantity) {
         chooseAddressFromPickUpOption();
         increaseProductQuantityInCart(productName, addQuantity);
-        //uncheckCheckboxSecondProduct();
+        uncheckCheckboxSecondProduct();
         paymentMethod();
         selectNewCardOnlinePaymentMethodInModalWindow();
         clickCheckout();

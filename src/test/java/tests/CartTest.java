@@ -11,7 +11,7 @@ public class CartTest extends BaseTest {
         authorizationSteps.enterWithValidDataInPasswordOption("12345678Emall!", "291561848");
         mainSteps.searchProductThroughInputSearchField("кофе", "Кофе в зернах «Minges» Caffe Creme Schumli, 1 кг");
         productSteps.addMainProduct();
-        //productSteps.addProductFromWidget();
+        productSteps.addProductFromWidget();
         mainSteps.clickOnCartPage();
         cartSteps.setActionsInProductPage("Кофе в зернах «Minges» Caffe Creme Schumli, 1 кг", 1);
         String expectedUrl = ITestConstants.PAYMENT_PAGE;
