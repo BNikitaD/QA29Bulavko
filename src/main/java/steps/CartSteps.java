@@ -18,7 +18,6 @@ public class CartSteps {
         this.driver = driver;
     }
 
-    //TODO: сделать комменты
     @Step("Selecting the delivery address for the product to the order pick-up point")
     public CartSteps chooseAddressFromPickUpOption() {
         cartPage.clickAddAddressMainButton();
