@@ -11,5 +11,4 @@ public interface ITestConstants {
     String EMPTY_PASSWORD_ERROR = "Поле \"Пароль\" обязательно для заполнения.";
     String EMPTY_PASSWORD_AND_PHONE_NUMBER_ERROR = "Поле \"Номер телефона\" обязательно для заполнения.\n" + "Поле \"Пароль\" обязательно для заполнения.";
     String NAME = "Vlad";
-    String XPATH_AFTER_CHECKOUT = "//*[@data-tdata=\"merchant.name\"]";
 }
