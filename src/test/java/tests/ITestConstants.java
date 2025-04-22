@@ -2,7 +2,7 @@ package tests;
 
 public interface ITestConstants {
 
-    String PAYMENT_PAGE = "https://pay196.paysec.by";
+    String PAYMENT_PAGE = "https://pay196.paysec.by/pay";
     String URL_OF_PRODUCT = "https://emall.by/product/831332";
     String ENTRY_PAGE = "https://emall.by/login?backurl=/";
     String INVALID_PHONE_NUMBER_ERROR = "Значение поля \"Номер телефона\" должно начинаться с +375 затем код (25|29|33|44) и далее 7 цифр (первая из которых не 0)";

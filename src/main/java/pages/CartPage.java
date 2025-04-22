@@ -6,6 +6,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import elements.Checkbox;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 /**
  * The type Cart page.
@@ -41,7 +45,8 @@ public class CartPage extends BasePage {
      * @param addQuantity the add quantity
      */
     public void increaseProductQuantityInCart(String productName, int addQuantity) {
-        WebElement addProduct = driver.findElement(By.xpath(String.format(INCREASE_PRODUCT_COUNT_BY_NAME, productName)));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement addProduct = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(String.format(INCREASE_PRODUCT_COUNT_BY_NAME, productName))));
         for (int i = 0; i < addQuantity; i++) {
             addProduct.click();
             log.info("Нажато увеличения количества товара");
@@ -75,7 +80,7 @@ public class CartPage extends BasePage {
      */
     public void clickCheckout() {
         log.info("Нажатие на кнопку оформления заказа");
-        driver.findElement(CHECKOUT_BUTTON).click();
+        waiter.waitForElementClicable(driver, CHECKOUT_BUTTON, 7).click();
     }
 
     /**

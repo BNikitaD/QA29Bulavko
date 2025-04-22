@@ -17,6 +17,7 @@ public class MainTest extends BaseTest {
 
     @Test(description = "this test check search input")
     public void searchProductInSearchInputTest() {
+        mainSteps.openPageAndAcceptCookies();
         mainSteps.searchProductThroughInputSearchField("кофе", "Кофе молотый «Egoiste» Espresso, 250 г");
         Assert.assertEquals(driver.getCurrentUrl(), URL_OF_PRODUCT);
     }
