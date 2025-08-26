@@ -24,4 +24,11 @@ public class Waiter {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
+    public class WaitUtils {
+        public static void waitForUrlContains(WebDriver driver, String expectedUrl, int timeoutInSeconds) {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+            wait.until(ExpectedConditions.urlContains(expectedUrl));
+        }
+    }
 }
